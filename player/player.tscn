@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3t8k3qftlbn5"]
+[gd_scene load_steps=17 format=3 uid="uid://b3t8k3qftlbn5"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_kit0r"]
 [ext_resource type="Texture2D" uid="uid://dnrmkl2pwtfw7" path="res://assets/player/2D Action Adventure Player Sprite.png" id="1_q040f"]
@@ -130,9 +130,63 @@ tracks/0/keys = {
 "values": [13, 16]
 }
 
+[sub_resource type="Animation" id="Animation_nrkbn"]
+resource_name = "attack_down"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [21, 23]
+}
+
+[sub_resource type="Animation" id="Animation_43rjj"]
+resource_name = "attack_up"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [24, 26]
+}
+
+[sub_resource type="Animation" id="Animation_484yp"]
+resource_name = "attack_side"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [27, 29]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h6a70"]
 _data = {
 "RESET": SubResource("Animation_qb166"),
+"attack_down": SubResource("Animation_nrkbn"),
+"attack_side": SubResource("Animation_484yp"),
+"attack_up": SubResource("Animation_43rjj"),
 "idle_down": SubResource("Animation_ny6nu"),
 "idle_side": SubResource("Animation_rcpug"),
 "idle_up": SubResource("Animation_4gdci"),
@@ -155,7 +209,7 @@ position = Vector2(0, -21)
 texture = ExtResource("1_q040f")
 hframes = 16
 vframes = 3
-frame = 14
+frame = 29
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

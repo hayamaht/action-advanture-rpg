@@ -3,7 +3,12 @@ class_name Player
 
 const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 
+@export_category("Movement")
 @export var move_speed := 100.0
+
+@export_category("Attack")
+@export_range(1, 50, 0.5) var decelerate_speed := 25.0
+@export var attack_sound: AudioStream
 
 @onready var hsm: LimboHSM = $LimboHSM
 @onready var idle_state: LimboState = $LimboHSM/Idle

@@ -8,6 +8,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 @onready var hsm: LimboHSM = $LimboHSM
 @onready var idle_state: LimboState = $LimboHSM/Idle
 @onready var move_state: LimboState = $LimboHSM/Walk
+@onready var attack_state: LimboState = $LimboHSM/Attack
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
@@ -20,10 +21,11 @@ var movement_input: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	_init_state_machine()
 
-
 func _init_state_machine() -> void:
-	hsm.add_transition(idle_state, move_state, "to_move")
-	hsm.add_transition(move_state, idle_state, "to_idle")
+	hsm.add_transition(hsm.ANYSTATE, move_state, "to_move")
+	hsm.add_transition(hsm.ANYSTATE, idle_state, "to_idle")
+	hsm.add_transition(idle_state, attack_state, "to_attack")
+	hsm.add_transition(move_state, attack_state, "to_attack")
 
 	hsm.initial_state = idle_state
 	hsm.initialize(self)

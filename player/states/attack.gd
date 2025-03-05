@@ -10,7 +10,7 @@ func _enter() -> void:
 	attacking = true
 	_player.animation_player.animation_finished.connect(end_attack)
 	_player.apply_animation("attack")
-	#player.splash_animation_player.play("Attack_" + player.anima_direction())
+	_player.splash_animation_player.play("attack_" + _player.apply_dir())
 	#player.audio.stream = attack_sound
 	#player.audio.pitch_scale = randf_range(0.9, 1.1)
 	#player.audio.play()

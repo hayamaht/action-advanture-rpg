@@ -10,6 +10,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 @onready var move_state: LimboState = $LimboHSM/Walk
 @onready var attack_state: LimboState = $LimboHSM/Attack
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var splash_animation_player: AnimationPlayer = $Sprite2D/AttackEfxSprite/AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 signal dir_changed(new_dir: Vector2)

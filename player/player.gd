@@ -7,7 +7,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 @export var move_speed := 100.0
 
 @export_category("Attack")
-@export_range(1, 50, 0.5) var decelerate_speed := 25.0
+@export_range(1, 20, 0.5) var decelerate_speed := 15.0
 @export var attack_sound: AudioStream
 
 @onready var hsm: LimboHSM = $LimboHSM
@@ -17,6 +17,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var splash_animation_player: AnimationPlayer = $Sprite2D/AttackEfxSprite/AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 
 signal dir_changed(new_dir: Vector2)
 
@@ -51,6 +52,16 @@ func apply_animation(state: String) -> void:
 
 func apply_movement(_delta: float) -> void:
 	velocity = direction * move_speed
+
+func apply_decelerate(delta: float) -> void:
+	velocity -= velocity * decelerate_speed * delta
+
+func apply_attack() -> void:
+	apply_animation("attack")
+	splash_animation_player.play("attack_" + apply_dir())
+	audio.stream = attack_sound
+	audio.pitch_scale = randf_range(0.9, 1.1)
+	audio.play()
 
 func apply_dir() -> String:
 	if cardinal_direction == Vector2.UP: return "up"

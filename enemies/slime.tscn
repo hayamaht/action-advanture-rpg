@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bemdf5tc8d77q"]
+
+[ext_resource type="Texture2D" uid="uid://b3cyil7oiklno" path="res://assets/enemies/Slime.png" id="1_hxstn"]
+[ext_resource type="Texture2D" uid="uid://bj7m245finkuu" path="res://assets/misc/Shadow.png" id="2_natkt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0r1i"]
+radius = 5.0
+height = 20.0
+
+[node name="Slime" type="CharacterBody2D"]
+collision_layer = 256
+collision_mask = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+texture = ExtResource("1_hxstn")
+hframes = 16
+vframes = 2
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+modulate = Color(0.541176, 0.211765, 0, 1)
+show_behind_parent = true
+texture = ExtResource("2_natkt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_n0r1i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

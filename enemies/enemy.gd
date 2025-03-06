@@ -57,6 +57,9 @@ func apply_dir() -> String:
 	if cardinal_direction == Vector2.DOWN: return "down"
 	return "side"
 
+func get_rand_time() -> int:
+	return randi_range(cycle_min, cycle_max) * animation_duration
+
 func change_dir(dir: Vector2 = Vector2.ZERO) -> bool:
 	direction = dir
 	if direction == Vector2.ZERO: return false

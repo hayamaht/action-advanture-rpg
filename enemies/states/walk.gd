@@ -4,7 +4,7 @@ var _time: float = 0.0
 var _dir: Vector2
 
 func _enter() -> void:
-	_time = randi_range(_enemy.cycle_min, _enemy.cycle_max) * _enemy.animation_duration
+	_time = _enemy.get_rand_time()
 	_enemy.apply_direction()
 	_enemy.apply_animation("walk")
 

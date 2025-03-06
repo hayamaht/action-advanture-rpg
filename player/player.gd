@@ -18,6 +18,8 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 @onready var splash_animation_player: AnimationPlayer = $Sprite2D/AttackEfxSprite/AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
+@onready var hurt_box: HurtBox = $Interactions/HurtBox
+@onready var interactions: Node2D = $Interactions
 
 signal dir_changed(new_dir: Vector2)
 
@@ -62,6 +64,27 @@ func apply_attack() -> void:
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(0.9, 1.1)
 	audio.play()
+
+func apply_hurt_box(toggle: bool) -> void:
+	hurt_box.monitoring = toggle
+
+func apply_rotation(new_dir: Vector2) -> void:
+	match new_dir:
+		Vector2.DOWN:
+			interactions.rotation_degrees = 0
+			#position = Vector2(0, 5)
+		Vector2.UP:
+			interactions.rotation_degrees = 180
+			#position = Vector2(0, -25)
+		Vector2.LEFT:
+			interactions.rotation_degrees = 90
+			#position = Vector2(-19, -13)
+		Vector2.RIGHT:
+			interactions.rotation_degrees = -90
+			#position = Vector2(19, -13)
+		_:
+			interactions.rotation_degrees = 0
+
 
 func apply_dir() -> String:
 	if cardinal_direction == Vector2.UP: return "up"

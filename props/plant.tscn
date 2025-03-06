@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://d1oaj5twphjn6" path="res://generals/hit_box.tscn" id="2_idrju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5woka"]
-size = Vector2(26, 26)
+size = Vector2(30, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ee8"]
-size = Vector2(26, 18)
+size = Vector2(22, 18)
 
 [node name="Plant" type="Node2D"]
 script = ExtResource("1_fdx2v")
@@ -25,15 +25,16 @@ position = Vector2(0, -4)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_5woka")
+debug_color = Color(0.96, 0.62304, 0.1824, 0.419608)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, -4)
 collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_d1ee8")
-debug_color = Color(0.75, 0.445, 0.2925, 0.631373)
+debug_color = Color(0.2596, 0.529427, 0.59, 0.631373)
 
 [connection signal="damaged" from="HitBox" to="." method="_on_hit_box_damaged"]

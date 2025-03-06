@@ -20,7 +20,40 @@ attack_sound = ExtResource("3_cok0b")
 position = Vector2(259, 214)
 
 [node name="Plant2" parent="." instance=ExtResource("4_m51lu")]
-position = Vector2(340, 254)
+position = Vector2(262, 269)
+
+[node name="Plant13" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(226, 270)
+
+[node name="Plant14" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(186, 270)
+
+[node name="Plant8" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(514, 330)
+
+[node name="Plant9" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(554, 330)
+
+[node name="Plant10" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(593, 331)
+
+[node name="Plant11" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(637, 333)
+
+[node name="Plant12" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(674, 333)
+
+[node name="Plant4" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(209, 212)
+
+[node name="Plant5" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(150, 216)
+
+[node name="Plant6" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(91, 215)
+
+[node name="Plant7" parent="." instance=ExtResource("4_m51lu")]
+position = Vector2(41, 217)
 
 [node name="Plant3" parent="." instance=ExtResource("4_m51lu")]
 position = Vector2(433, 235)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://bbfmc1s34ogo8"]
+[gd_scene load_steps=4 format=4 uid="uid://bbfmc1s34ogo8"]
 
 [ext_resource type="PackedScene" uid="uid://b3t8k3qftlbn5" path="res://player/player.tscn" id="1_6fbp5"]
 [ext_resource type="PackedScene" uid="uid://b624r1s6cggvb" path="res://tiles/grass.tscn" id="1_usvdy"]
+[ext_resource type="AudioStream" uid="uid://cifctourmkgsy" path="res://assets/audio/Sword Swoosh.wav" id="3_cok0b"]
 
 [node name="Playground" type="Node2D"]
 
@@ -10,4 +11,5 @@ tile_map_data = PackedByteArray("AAAAAAAAAQACAAAAAAAAAAEAAQAGAAMAAAAAAAIAAQABAAE
 
 [node name="Player" parent="." instance=ExtResource("1_6fbp5")]
 position = Vector2(370, 198)
-collision_mask = 16
+move_speed = 150.0
+attack_sound = ExtResource("3_cok0b")

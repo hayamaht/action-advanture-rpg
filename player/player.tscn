@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://b3t8k3qftlbn5"]
+[gd_scene load_steps=25 format=3 uid="uid://b3t8k3qftlbn5"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_kit0r"]
 [ext_resource type="Texture2D" uid="uid://dnrmkl2pwtfw7" path="res://assets/player/2D Action Adventure Player Sprite.png" id="1_q040f"]
 [ext_resource type="Texture2D" uid="uid://cdye0gveq78xj" path="res://assets/weapons/sword_fx.png" id="3_252o2"]
 [ext_resource type="Script" path="res://player/states/idle.gd" id="3_obswn"]
 [ext_resource type="Script" path="res://player/states/walk.gd" id="4_iwpvq"]
+[ext_resource type="Texture2D" uid="uid://bj7m245finkuu" path="res://assets/misc/Shadow.png" id="4_qsv3i"]
 [ext_resource type="Script" path="res://player/states/attack.gd" id="5_q670m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67wv7"]
@@ -391,6 +392,12 @@ texture = ExtResource("1_q040f")
 hframes = 16
 vframes = 3
 frame = 21
+
+[node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 0.784314)
+show_behind_parent = true
+position = Vector2(0, 21)
+texture = ExtResource("4_qsv3i")
 
 [node name="AttackEfxSprite" type="Sprite2D" parent="Sprite2D"]
 visible = false

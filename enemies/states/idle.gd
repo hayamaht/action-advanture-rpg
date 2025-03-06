@@ -11,4 +11,4 @@ func _update(delta: float) -> void:
 	_time -= delta
 
 	if _time <= 0:
-		_enemy.hsm.dispatch("to_move")
+		dispatch("to_move")

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b624r1s6cggvb" path="res://tiles/grass.tscn" id="1_usvdy"]
 [ext_resource type="AudioStream" uid="uid://cifctourmkgsy" path="res://assets/audio/Sword Swoosh.wav" id="3_cok0b"]
 [ext_resource type="PackedScene" uid="uid://c6gjpo3m86xnn" path="res://props/plant.tscn" id="4_m51lu"]
-[ext_resource type="PackedScene" uid="uid://bemdf5tc8d77q" path="res://enemies/slime.tscn" id="5_1b61p"]
+[ext_resource type="PackedScene" uid="uid://bemdf5tc8d77q" path="res://enemies/slime/slime.tscn" id="5_1b61p"]
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true

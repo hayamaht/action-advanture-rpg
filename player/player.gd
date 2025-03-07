@@ -42,8 +42,8 @@ var invulnerable := false
 
 func _ready() -> void:
 	PlayerManager.player = self
-	update_hp(max_hp)
 	_init_state_machine()
+	update_hp(max_hp)
 
 func _init_state_machine() -> void:
 	hsm.add_transition(hsm.ANYSTATE, move_state, PlayerState.TO_WALK)

@@ -19,8 +19,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelManager="*res://globals/global_level_manager.gd"
-PlayerManager="*res://globals/global_player_manager.gd"
 Hud="*res://gui/hud.tscn"
+PlayerManager="*res://globals/global_player_manager.gd"
 
 [display]
 
@@ -35,6 +35,7 @@ window/stretch/mode="viewport"
 folder_colors={
 "res://assets/": "red",
 "res://enemies/": "yellow",
+"res://levels/": "pink",
 "res://player/": "teal"
 }
 

@@ -14,3 +14,6 @@ func _update(delta: float) -> void:
 
 	if _time <= 0:
 		dispatch("to_idle")
+
+func _on_hit_box_damaged(hurt_box: HurtBox) -> void:
+	dispatch("to_stun")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bemdf5tc8d77q"]
+[gd_scene load_steps=32 format=3 uid="uid://bemdf5tc8d77q"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_4rl1r"]
 [ext_resource type="Texture2D" uid="uid://b3cyil7oiklno" path="res://assets/enemies/Slime.png" id="1_hxstn"]
@@ -12,9 +12,6 @@
 [ext_resource type="Script" path="res://enemies/slime/states/stun.gd" id="7_akfhr"]
 [ext_resource type="AudioStream" uid="uid://co42wvlaf00l8" path="res://assets/audio/Hit.wav" id="7_odtls"]
 [ext_resource type="Script" path="res://enemies/slime/states/destroy.gd" id="8_3valp"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dlux1"]
-radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ft1ra"]
 radius = 14.0
@@ -735,9 +732,9 @@ script = ExtResource("1_4rl1r")
 
 [node name="HitBox" parent="." instance=ExtResource("3_bcrey")]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_dlux1")
+shape = SubResource("CircleShape2D_ft1ra")
 debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
 
 [node name="HurtBox" parent="." instance=ExtResource("4_p7ots")]
@@ -796,3 +793,6 @@ script = ExtResource("7_akfhr")
 script = ExtResource("8_3valp")
 
 [connection signal="damaged" from="HitBox" to="." method="_on_hit_box_damaged"]
+[connection signal="damaged" from="HitBox" to="LimboHSM/Idle" method="_on_hit_box_damaged"]
+[connection signal="damaged" from="HitBox" to="LimboHSM/Walk" method="_on_hit_box_damaged"]
+[connection signal="animation_finished" from="AnimationPlayer" to="LimboHSM/Stun" method="_on_animation_player_animation_finished"]

@@ -89,7 +89,7 @@ func change_dir(dir: Vector2 = Vector2.ZERO) -> bool:
 
 func _on_hit_box_damaged(hurt_box: HurtBox) -> void:
 
-	if invulnerable: return
+	#if invulnerable: return
 
 	hp -= hurt_box.damage
 

@@ -20,3 +20,7 @@ func _update(delta: float) -> void:
 
 	if _animation_finished == true:
 		dispatch("to_idle")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	_animation_finished = true

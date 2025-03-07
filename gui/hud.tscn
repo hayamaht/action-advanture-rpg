@@ -27,6 +27,7 @@ offset_left = 342.0
 offset_top = 21.0
 offset_right = 472.0
 offset_bottom = 49.0
+alignment = 2
 
 [node name="Heart" parent="Control/HFlowContainer" instance=ExtResource("3_aeby8")]
 layout_mode = 2

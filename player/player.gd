@@ -123,8 +123,7 @@ func change_dir() -> bool:
 
 func update_hp(delta: int) -> void:
 	hp = clampi(hp + delta, 0, max_hp)
-	# TODO: make HUD
-	#Hud.update_hp(hp, max_hp)
+	Hud.update_hp(hp, max_hp)
 
 func make_invulnerable(duration: float = 1.0) -> void:
 	invulnerable = true

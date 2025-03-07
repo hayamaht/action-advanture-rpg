@@ -840,6 +840,7 @@ script = ExtResource("7_akfhr")
 [node name="Destroy" type="LimboState" parent="LimboHSM"]
 script = ExtResource("8_3valp")
 
+[connection signal="enemy_damaged" from="." to="LimboHSM/Stun" method="_on_slime_enemy_damaged"]
 [connection signal="enemy_damaged" from="." to="LimboHSM/Destroy" method="_on_slime_enemy_damaged"]
 [connection signal="enemy_destroyed" from="." to="LimboHSM/Destroy" method="_on_slime_enemy_destroyed"]
 [connection signal="damaged" from="HitBox" to="." method="_on_hit_box_damaged"]

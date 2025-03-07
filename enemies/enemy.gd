@@ -23,6 +23,8 @@ signal enemy_destroyed(hurt_box: HurtBox)
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable := false
+var player: Player
+
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()

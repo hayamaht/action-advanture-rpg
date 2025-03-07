@@ -15,6 +15,7 @@ class_name Slime
 @onready var destroy_state: LimboState = $LimboHSM/Destroy
 
 func _ready() -> void:
+	player = PlayerManager.player
 	_init_state_machine()
 
 func _init_state_machine() -> void:

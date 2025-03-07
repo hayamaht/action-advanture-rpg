@@ -19,7 +19,7 @@ func _update(delta: float) -> void:
 	_player.apply_decelerate(delta)
 
 	if not _attacking:
-		dispatch("to_idle")
+		dispatch(PlayerState.TO_IDLE)
 
 func end_attack(_data):
 	_attacking = false

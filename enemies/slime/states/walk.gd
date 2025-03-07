@@ -1,7 +1,6 @@
 extends EnemyState
 
 var _time: float = 0.0
-var _dir: Vector2
 
 func _enter() -> void:
 	_time = _enemy.get_rand_time()

@@ -13,9 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://co42wvlaf00l8" path="res://assets/audio/Hit.wav" id="7_odtls"]
 [ext_resource type="Script" path="res://enemies/slime/states/destroy.gd" id="8_3valp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ft1ra"]
-radius = 14.0
-
 [sub_resource type="Animation" id="Animation_axwjl"]
 length = 0.001
 tracks/0/type = "value"
@@ -80,6 +77,9 @@ _data = {
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0r1i"]
 radius = 5.0
 height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ft1ra"]
+radius = 14.0
 
 [sub_resource type="Animation" id="Animation_tr221"]
 length = 0.001
@@ -778,20 +778,6 @@ collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_sxn5n")
 
-[node name="HurtBox" parent="." instance=ExtResource("4_p7ots")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_ft1ra")
-debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
-
-[node name="HitBox" parent="." instance=ExtResource("3_bcrey")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_ft1ra")
-debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -20)
 texture = ExtResource("1_hxstn")
@@ -820,6 +806,20 @@ shape = SubResource("CapsuleShape2D_n0r1i")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
+
+[node name="HitBox" parent="." instance=ExtResource("3_bcrey")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_ft1ra")
+debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
+
+[node name="HurtBox" parent="." instance=ExtResource("4_p7ots")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_ft1ra")
+debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -7,7 +7,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 @export var hp := 6
 @export var max_hp := 6
 @export var invulnerable_duration := 1.0
-@export var knockback_speed := 300.0
+@export var knockback_speed := 500.0
 
 @export_category("Movement")
 @export var move_speed := 100.0
@@ -123,8 +123,7 @@ func change_dir() -> bool:
 
 func update_hp(delta: int) -> void:
 	hp = clampi(hp + delta, 0, max_hp)
-	# TODO: make HUD
-	#Hud.update_hp(hp, max_hp)
+	Hud.update_hp(hp, max_hp)
 
 func make_invulnerable(duration: float = 1.0) -> void:
 	invulnerable = true

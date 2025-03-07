@@ -12,15 +12,16 @@ config_version=5
 
 config/name="Action Advanture RPG"
 config/tags=PackedStringArray("2d", "arpg")
-run/main_scene="res://playground.tscn"
+run/main_scene="res://levels/level_area01.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 LevelManager="*res://globals/global_level_manager.gd"
-PlayerManager="*res://globals/global_player_manager.gd"
 Hud="*res://gui/hud.tscn"
+PlayerManager="*res://globals/global_player_manager.gd"
+SceneTransition="*res://levels/scene_transition.tscn"
 
 [display]
 
@@ -35,6 +36,7 @@ window/stretch/mode="viewport"
 folder_colors={
 "res://assets/": "red",
 "res://enemies/": "yellow",
+"res://levels/": "pink",
 "res://player/": "teal"
 }
 

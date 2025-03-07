@@ -9,10 +9,7 @@ var player_spawned := false
 #signal interact_pressed
 
 func _ready():
-	pass
-	#add_player_instance()
-	#print("global player=")
-	#print(player)
+	add_player_instance()
 
 func add_player_instance() -> void:
 	player = PLAYER.instantiate()
@@ -27,6 +24,7 @@ func set_health(hp: int, max_hp: int) -> void:
 
 func set_player_position(new_pos: Vector2) -> void:
 	player.global_position = new_pos
+	player.velocity = Vector2.ZERO
 
 func set_as_parent(node: Node2D):
 	if player.get_parent():
@@ -37,7 +35,6 @@ func set_as_parent(node: Node2D):
 func unparent_player(node: Node2D):
 	node.remove_child(player)
 
-
-func  play_audio( audio: AudioStream) -> void:
+func play_audio( audio: AudioStream) -> void:
 	player.audio.stream = audio
 	player.audio.play()

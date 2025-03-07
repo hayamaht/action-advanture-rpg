@@ -10,7 +10,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 @export var knockback_speed := 500.0
 
 @export_category("Movement")
-@export var move_speed := 100.0
+@export var move_speed := 150.0
 
 @export_category("Attack")
 @export_range(1, 20, 0.5) var decelerate_speed := 15.0
@@ -42,8 +42,8 @@ var invulnerable := false
 
 func _ready() -> void:
 	PlayerManager.player = self
-	update_hp(max_hp)
 	_init_state_machine()
+	update_hp(max_hp)
 
 func _init_state_machine() -> void:
 	hsm.add_transition(hsm.ANYSTATE, move_state, PlayerState.TO_WALK)

@@ -12,7 +12,7 @@ func _enter() -> void:
 	_enemy.velocity = _dir * -_enemy.knockback_speed
 	_enemy.apply_animation("stun")
 
-func exit() -> void:
+func _exit() -> void:
 	_enemy.invulnerable = false
 
 func _update(delta: float) -> void:

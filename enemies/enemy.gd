@@ -18,6 +18,9 @@ signal enemy_destroyed(hurt_box: HurtBox)
 @export var knockback_speed := 200.0
 @export var desclerate_speed := 10.0
 
+@export_category("Item Drop")
+#@export var drops: Array[DropData]
+
 @onready var hsm: LimboHSM = $LimboHSM
 @onready var idle_state: LimboState = $LimboHSM/Idle
 @onready var move_state: LimboState = $LimboHSM/Walk
@@ -89,7 +92,7 @@ func change_dir(dir: Vector2 = Vector2.ZERO) -> bool:
 
 func _on_hit_box_damaged(hurt_box: HurtBox) -> void:
 
-	#if invulnerable: return
+	if invulnerable: return
 
 	hp -= hurt_box.damage
 

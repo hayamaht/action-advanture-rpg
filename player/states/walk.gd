@@ -1,7 +1,7 @@
 extends PlayerState
 
 func _enter() -> void:
-	_player.apply_animation("walk")
+	_player.apply_animation(PlayerState.WALK)
 
 
 func _update(delta: float) -> void:
@@ -11,8 +11,8 @@ func _update(delta: float) -> void:
 		_player.apply_animation("walk")
 
 	if _player.direction == Vector2.ZERO:
-		dispatch("to_idle")
+		dispatch(PlayerState.TO_IDLE)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
-		dispatch("to_attack")
+		dispatch(PlayerState.TO_ATTACK)

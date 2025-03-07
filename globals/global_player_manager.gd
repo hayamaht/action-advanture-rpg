@@ -9,9 +9,10 @@ var player_spawned := false
 #signal interact_pressed
 
 func _ready():
+	pass
 	#add_player_instance()
-	print("global player=")
-	print(player)
+	#print("global player=")
+	#print(player)
 
 func add_player_instance() -> void:
 	player = PLAYER.instantiate()

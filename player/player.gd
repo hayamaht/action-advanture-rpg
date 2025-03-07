@@ -32,10 +32,10 @@ func _ready() -> void:
 	_init_state_machine()
 
 func _init_state_machine() -> void:
-	hsm.add_transition(hsm.ANYSTATE, move_state, "to_move")
-	hsm.add_transition(hsm.ANYSTATE, idle_state, "to_idle")
-	hsm.add_transition(idle_state, attack_state, "to_attack")
-	hsm.add_transition(move_state, attack_state, "to_attack")
+	hsm.add_transition(hsm.ANYSTATE, move_state, PlayerState.TO_WALK)
+	hsm.add_transition(hsm.ANYSTATE, idle_state, PlayerState.TO_IDLE)
+	hsm.add_transition(idle_state, attack_state, PlayerState.TO_ATTACK)
+	hsm.add_transition(move_state, attack_state, PlayerState.TO_ATTACK)
 
 	hsm.initial_state = idle_state
 	hsm.initialize(self)

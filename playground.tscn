@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://bbfmc1s34ogo8"]
+[gd_scene load_steps=6 format=4 uid="uid://bbfmc1s34ogo8"]
 
 [ext_resource type="PackedScene" uid="uid://b3t8k3qftlbn5" path="res://player/player.tscn" id="1_6fbp5"]
 [ext_resource type="PackedScene" uid="uid://b624r1s6cggvb" path="res://tiles/grass.tscn" id="1_usvdy"]
 [ext_resource type="AudioStream" uid="uid://cifctourmkgsy" path="res://assets/audio/Sword Swoosh.wav" id="3_cok0b"]
 [ext_resource type="PackedScene" uid="uid://c6gjpo3m86xnn" path="res://props/plant.tscn" id="4_m51lu"]
+[ext_resource type="PackedScene" uid="uid://bemdf5tc8d77q" path="res://enemies/slime/slime.tscn" id="5_1b61p"]
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
@@ -51,3 +52,18 @@ position = Vector2(341, 187)
 
 [node name="Plant7" parent="." instance=ExtResource("4_m51lu")]
 position = Vector2(341, 187)
+
+[node name="Slime" parent="." instance=ExtResource("5_1b61p")]
+position = Vector2(376, 144)
+
+[node name="Slime2" parent="." instance=ExtResource("5_1b61p")]
+position = Vector2(360, 91)
+
+[node name="Slime3" parent="." instance=ExtResource("5_1b61p")]
+position = Vector2(439, 73)
+
+[node name="Slime4" parent="." instance=ExtResource("5_1b61p")]
+position = Vector2(93, 187)
+
+[node name="Slime5" parent="." instance=ExtResource("5_1b61p")]
+position = Vector2(166, 103)

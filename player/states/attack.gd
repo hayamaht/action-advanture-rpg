@@ -19,7 +19,7 @@ func _update(delta: float) -> void:
 	_player.apply_decelerate(delta)
 
 	if not _attacking:
-		_player.hsm.dispatch("to_idle")
+		dispatch("to_idle")
 
 func end_attack(_data):
 	_attacking = false

@@ -1,5 +1,8 @@
-class_name HurtBox extends Area2D
+extends Area2D
+class_name HurtBox
+
+@export var damage := 1
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is not HitBox: return
-	area.take_damage(self)
+	(area as HitBox).take_damage(self)

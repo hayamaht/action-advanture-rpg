@@ -42,6 +42,7 @@ func _init_state_machine() -> void:
 	hsm.add_transition(hsm.ANYSTATE, idle_state, "to_idle")
 	hsm.add_transition(idle_state, stun_state, "to_stun")
 	hsm.add_transition(move_state, stun_state, "to_stun")
+	hsm.add_transition(hsm.ANYSTATE, destroy_state, "to_destroy")
 
 	hsm.initial_state = idle_state
 	hsm.initialize(self)

@@ -14,5 +14,5 @@ func _update(delta: float) -> void:
 		dispatch("to_move")
 
 
-func _on_hit_box_damaged(hurt_box: HurtBox) -> void:
+func _on_hit_box_damaged(_hurt_box: HurtBox) -> void:
 	dispatch("to_stun")

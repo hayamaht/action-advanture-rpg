@@ -22,5 +22,5 @@ func _update(delta: float) -> void:
 		dispatch("to_idle")
 
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	_animation_finished = true

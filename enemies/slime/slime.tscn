@@ -778,16 +778,16 @@ collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_sxn5n")
 
-[node name="HitBox" parent="." instance=ExtResource("3_bcrey")]
+[node name="HurtBox" parent="." instance=ExtResource("4_p7ots")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_ft1ra")
 debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
 
-[node name="HurtBox" parent="." instance=ExtResource("4_p7ots")]
+[node name="HitBox" parent="." instance=ExtResource("3_bcrey")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_ft1ra")
 debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
@@ -840,6 +840,7 @@ script = ExtResource("7_akfhr")
 [node name="Destroy" type="LimboState" parent="LimboHSM"]
 script = ExtResource("8_3valp")
 
+[connection signal="enemy_damaged" from="." to="LimboHSM/Stun" method="_on_slime_enemy_damaged"]
 [connection signal="enemy_damaged" from="." to="LimboHSM/Destroy" method="_on_slime_enemy_damaged"]
 [connection signal="enemy_destroyed" from="." to="LimboHSM/Destroy" method="_on_slime_enemy_destroyed"]
 [connection signal="damaged" from="HitBox" to="." method="_on_hit_box_damaged"]

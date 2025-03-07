@@ -7,7 +7,7 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
 @export var hp := 6
 @export var max_hp := 6
 @export var invulnerable_duration := 1.0
-@export var knockback_speed := 300.0
+@export var knockback_speed := 500.0
 
 @export_category("Movement")
 @export var move_speed := 100.0

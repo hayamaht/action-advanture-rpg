@@ -35,6 +35,7 @@ window/stretch/mode="viewport"
 folder_colors={
 "res://assets/": "red",
 "res://enemies/": "yellow",
+"res://levels/": "pink",
 "res://player/": "teal"
 }
 

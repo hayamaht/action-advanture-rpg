@@ -1,7 +1,5 @@
 extends Node
 
-const CHILD_ID = 3
-
 const PLAYER = preload("res://player/player.tscn")
 #const INVENTORY_DATA: InventoryData = preload("res://resources/player_inventory.tres")
 
@@ -13,14 +11,8 @@ var player_spawned := false
 func _ready():
 	add_player_instance()
 
-#func get_scene() -> Node:
-	#for i in get_parent().get_children():
-		#print(i)
-	#return get_node("Level-")
-
 func add_player_instance() -> void:
 	player = PLAYER.instantiate()
-	#get_parent().get_child(CHILD_ID).add_child(player)
 	add_child(player)
 	await get_tree().create_timer(0.2).timeout
 	player_spawned = true
@@ -32,6 +24,7 @@ func set_health(hp: int, max_hp: int) -> void:
 
 func set_player_position(new_pos: Vector2) -> void:
 	player.global_position = new_pos
+	player.velocity = Vector2.ZERO
 
 func set_as_parent(node: Node2D):
 	if player.get_parent():
@@ -41,7 +34,6 @@ func set_as_parent(node: Node2D):
 
 func unparent_player(node: Node2D):
 	node.remove_child(player)
-
 
 func play_audio( audio: AudioStream) -> void:
 	player.audio.stream = audio

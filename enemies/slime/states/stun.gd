@@ -1,4 +1,4 @@
-extends EnemyState
+extends SlimeState
 
 var _dir: Vector2
 var _animation_finished := false

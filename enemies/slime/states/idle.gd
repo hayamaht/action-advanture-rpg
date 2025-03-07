@@ -1,9 +1,9 @@
-extends EnemyState
+extends SlimeState
 
 var _time: float = 0.0
 
 func _enter() -> void:
-	_time = randf_range(_enemy.duration_min, _enemy.duration_max)
+	_time = _enemy.get_rand_duration()
 	_enemy.velocity = Vector2.ZERO
 	_enemy.apply_animation("idle")
 

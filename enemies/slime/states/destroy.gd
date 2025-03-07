@@ -1,7 +1,6 @@
-extends EnemyState
+extends SlimeState
 
 #const PICKUP = preload("res://sceens/gui/item_pickup.tscn")
-
 
 var _dir: Vector2
 var _damage_position: Vector2

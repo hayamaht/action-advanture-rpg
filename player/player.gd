@@ -28,6 +28,7 @@ var direction: Vector2 = Vector2.ZERO
 var movement_input: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	PlayerManager.player = self
 	_init_state_machine()
 
 func _init_state_machine() -> void:

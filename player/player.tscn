@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b3t8k3qftlbn5"]
+[gd_scene load_steps=39 format=3 uid="uid://b3t8k3qftlbn5"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_kit0r"]
 [ext_resource type="Texture2D" uid="uid://dnrmkl2pwtfw7" path="res://assets/player/2D Action Adventure Player Sprite.png" id="1_q040f"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://player/states/attack.gd" id="5_q670m"]
 [ext_resource type="PackedScene" uid="uid://drsyryx2pxbdw" path="res://generals/hurt_box.tscn" id="5_xqfob"]
 [ext_resource type="Script" path="res://player/player_camera.gd" id="6_3626r"]
+[ext_resource type="AudioStream" uid="uid://cifctourmkgsy" path="res://assets/audio/Sword Swoosh.wav" id="7_7py5x"]
 [ext_resource type="AudioStream" uid="uid://04h53ismxpl0" path="res://assets/audio/Hit Player Sound.wav" id="7_jpmn6"]
 [ext_resource type="PackedScene" uid="uid://d1oaj5twphjn6" path="res://generals/hit_box.tscn" id="10_omicf"]
 [ext_resource type="Script" path="res://player/states/stun.gd" id="11_5w3a3"]
@@ -240,6 +241,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 17)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_7py5x")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_484yp"]
 resource_name = "attack_side"
@@ -269,6 +285,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(17, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_7py5x")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_43rjj"]
 resource_name = "attack_up"
@@ -298,6 +329,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -17)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_7py5x")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ny6nu"]
 resource_name = "idle_down"
@@ -556,10 +602,9 @@ texture = ExtResource("4_qsv3i")
 [node name="AttackEfxSprite" type="Sprite2D" parent="Sprite2D"]
 visible = false
 show_behind_parent = true
-position = Vector2(10, 0)
+position = Vector2(0, 10)
 texture = ExtResource("3_252o2")
 hframes = 12
-frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/AttackEfxSprite"]
 libraries = {
@@ -568,7 +613,6 @@ libraries = {
 autoplay = "RESET"
 
 [node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("5_xqfob")]
-position = Vector2(17, 0)
 collision_mask = 256
 monitoring = false
 

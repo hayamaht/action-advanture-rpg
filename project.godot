@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Action Advanture RPG"
 config/tags=PackedStringArray("2d", "arpg")
-run/main_scene="res://playground.tscn"
+run/main_scene="res://levels/level_area01.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 LevelManager="*res://globals/global_level_manager.gd"
 Hud="*res://gui/hud.tscn"
 PlayerManager="*res://globals/global_player_manager.gd"
+SceneTransition="*res://levels/scene_transition.tscn"
 
 [display]
 

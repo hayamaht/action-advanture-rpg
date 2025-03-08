@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1741402381|3393473167';
+const CACHE_VERSION = '1741413825|8589792692';
 /** @type {string} */
 const CACHE_PREFIX = 'Action Advanture-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;

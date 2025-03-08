@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://rjs6tpk4vaxi" path="res://gui/heart.tscn" id="3_aeby8"]
 
 [node name="Hud" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_dv7hx")
 
 [node name="Control" type="Control" parent="."]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(452, 10)

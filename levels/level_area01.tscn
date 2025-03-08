@@ -43,15 +43,16 @@ position = Vector2(205, 312)
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_0hriv")]
 position = Vector2(648, 209)
 
-[node name="LevelTransition" parent="." instance=ExtResource("4_re3y1")]
+[node name="TA-01-02" parent="." instance=ExtResource("4_re3y1")]
 position = Vector2(320, 480)
 level = "res://levels/level_area02.tscn"
+target_transition_area = "TA-01-02"
 side = 3
 
-[node name="LevelTransition3" parent="." instance=ExtResource("4_re3y1")]
+[node name="TA-01-03" parent="." instance=ExtResource("4_re3y1")]
 position = Vector2(736, 192)
 level = "res://levels/level_area03.tscn"
-target_transition_area = "LevelTransition3"
+target_transition_area = "TA-01-03"
 side = 1
 
 [node name="Slime" parent="." instance=ExtResource("6_oivep")]

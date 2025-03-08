@@ -4,6 +4,9 @@
 
 extends CanvasLayer
 
+####
+## signal shown / hidden used in `inventory_ui.gd`
+##
 signal shown
 signal hidden
 
@@ -33,7 +36,6 @@ func toggle_pause_menu(type := HIDE) -> void:
 	get_tree().paused = t
 	visible = t
 	is_paused = t
-	button_save.grab_focus()
 	if type == SHOW: shown.emit()
 	else: hidden.emit()
 

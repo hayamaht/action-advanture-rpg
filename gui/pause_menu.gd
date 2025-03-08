@@ -7,8 +7,8 @@ extends CanvasLayer
 signal shown
 signal hidden
 
-@onready var button_save: Button = $MarginContainer/VBoxContainer2/VBoxContainer/Button_Save
-@onready var button_load: Button = $MarginContainer/VBoxContainer2/VBoxContainer/Button_Load
+@onready var button_save: Button = %Button_Save
+@onready var button_load: Button = %Button_Load
 
 #@onready var item_desc: Label = $Control/ItemDesc
 #@onready var audio_stream_player: AudioStreamPlayer = $Control/AudioStreamPlayer

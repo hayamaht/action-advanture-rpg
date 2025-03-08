@@ -12,8 +12,7 @@ signal hidden
 
 @onready var button_save: Button = %Button_Save
 @onready var button_load: Button = %Button_Load
-
-#@onready var item_desc: Label = $Control/ItemDesc
+@onready var item_desc: Label = $Control/ItemDesc
 #@onready var audio_stream_player: AudioStreamPlayer = $Control/AudioStreamPlayer
 
 
@@ -52,8 +51,7 @@ func _keep_data(type):
 
 
 func update_item_desc(s: String) -> void:
-	pass
-	#item_desc.text = s
+	item_desc.text = s
 
 func _on_button_save_pressed() -> void:
 	if not is_paused: return

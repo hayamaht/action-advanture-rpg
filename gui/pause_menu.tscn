@@ -111,3 +111,8 @@ grow_vertical = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Button_Load" to="." method="_on_button_load_pressed"]

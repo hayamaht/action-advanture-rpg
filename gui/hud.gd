@@ -1,3 +1,9 @@
+###
+## $Hud.layer = 2
+## $Hud/$Control.mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
+##
+
+
 extends CanvasLayer
 
 @onready var h_flow_container: HFlowContainer = $Control/HFlowContainer

@@ -64,9 +64,8 @@ func _snap_to_grid() -> void:
 	position.y = round(position.y / 16) * 16
 
 func _place_player() -> void:
-	print("_place_player: ", name)
-	if name != LevelManager.target_transition:
-		return
+	if name != LevelManager.target_transition: return
+
 	PlayerManager.set_player_position(global_position + LevelManager.position_offset)
 
 func _get_offset() -> Vector2:

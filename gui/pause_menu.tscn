@@ -1,51 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvc12fkqox2nq"]
+[gd_scene load_steps=7 format=3 uid="uid://dvc12fkqox2nq"]
 
 [ext_resource type="Script" path="res://gui/pause_menu.gd" id="1_m5usx"]
+[ext_resource type="Texture2D" uid="uid://bpg4elar8n73s" path="res://assets/items/items.png" id="2_4p8a1"]
+[ext_resource type="Script" path="res://gui/inventory_ui.gd" id="3_pjeg8"]
+[ext_resource type="Resource" uid="uid://dmps5s23jobgw" path="res://player/player_inventory.tres" id="4_wbfvx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f318x"]
+atlas = ExtResource("2_4p8a1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ka0ei"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("AtlasTexture_f318x")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_m5usx")
 metadata/_edit_horizontal_guides_ = [-132.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.01, 0.01, 0.01, 0.643137)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+color = Color(0.25, 0.25, 0.25, 0.886275)
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="Control/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "[Pause]
-"
+size_flags_vertical = 0
+text = "[ Pause ]"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 8
 
-[node name="Button_Save" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="Button_Save" type="Button" parent="Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Save"
 
-[node name="Button_Load" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="Button_Load" type="Button" parent="Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Load"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Button_Load" to="." method="_on_button_load_pressed"]
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -27.0
+offset_right = 98.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ka0ei")
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+columns = 5
+script = ExtResource("3_pjeg8")
+data = ExtResource("4_wbfvx")
+
+[node name="ItemDesc" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -108.0
+offset_right = 209.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "TEXT aas dasd as das dasd asd asd asdd asd asd asd asd asd asd asd "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

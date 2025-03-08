@@ -4,13 +4,15 @@
 
 extends CanvasLayer
 
+####
+## signal shown / hidden used in `inventory_ui.gd`
+##
 signal shown
 signal hidden
 
-@onready var button_save: Button = $MarginContainer/VBoxContainer2/VBoxContainer/Button_Save
-@onready var button_load: Button = $MarginContainer/VBoxContainer2/VBoxContainer/Button_Load
-
-#@onready var item_desc: Label = $Control/ItemDesc
+@onready var button_save: Button = %Button_Save
+@onready var button_load: Button = %Button_Load
+@onready var item_desc: Label = $Control/ItemDesc
 #@onready var audio_stream_player: AudioStreamPlayer = $Control/AudioStreamPlayer
 
 
@@ -33,7 +35,6 @@ func toggle_pause_menu(type := HIDE) -> void:
 	get_tree().paused = t
 	visible = t
 	is_paused = t
-	button_save.grab_focus()
 	if type == SHOW: shown.emit()
 	else: hidden.emit()
 
@@ -50,8 +51,7 @@ func _keep_data(type):
 
 
 func update_item_desc(s: String) -> void:
-	pass
-	#item_desc.text = s
+	item_desc.text = s
 
 func _on_button_save_pressed() -> void:
 	if not is_paused: return

@@ -9,10 +9,6 @@ class_name Slime
 @export var cycle_min := 1
 @export var cycle_max := 3
 
-@onready var idle_state: LimboState = $LimboHSM/Idle
-@onready var move_state: LimboState = $LimboHSM/Walk
-@onready var stun_state: LimboState = $LimboHSM/Stun
-@onready var destroy_state: LimboState = $LimboHSM/Destroy
 
 func _ready() -> void:
 	player = PlayerManager.player

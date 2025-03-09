@@ -16,10 +16,14 @@ signal enemy_destroyed(hurt_box: HurtBox)
 @export_category("Item Drop")
 @export var drops: Array[DropData]
 
-@onready var hsm: LimboHSM = $LimboHSM
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var hit_box: HitBox = $HitBox
+@onready var hsm: LimboHSM = $LimboHSM
+@onready var idle_state: LimboState = $LimboHSM/Idle
+@onready var move_state: LimboState = $LimboHSM/Walk
+@onready var stun_state: LimboState = $LimboHSM/Stun
+@onready var destroy_state: LimboState = $LimboHSM/Destroy
 
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO

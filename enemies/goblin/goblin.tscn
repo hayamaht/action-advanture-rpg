@@ -1,40 +1,27 @@
-[gd_scene load_steps=37 format=3 uid="uid://bemdf5tc8d77q"]
+[gd_scene load_steps=34 format=3 uid="uid://q8ycssokrfkr"]
 
-[ext_resource type="Texture2D" uid="uid://b3cyil7oiklno" path="res://assets/enemies/Slime.png" id="1_hxstn"]
-[ext_resource type="Script" path="res://enemies/slime/slime.gd" id="1_sxn5n"]
-[ext_resource type="Script" path="res://generals/drop_data.gd" id="2_mo34c"]
-[ext_resource type="Texture2D" uid="uid://bj7m245finkuu" path="res://assets/misc/Shadow.png" id="2_natkt"]
-[ext_resource type="Resource" uid="uid://s5mfuc0vxi4u" path="res://items/gem.tres" id="3_aypo3"]
-[ext_resource type="PackedScene" uid="uid://d1oaj5twphjn6" path="res://generals/hit_box.tscn" id="3_bcrey"]
-[ext_resource type="Resource" uid="uid://dfqafrs53ya67" path="res://items/potion.tres" id="4_ibfys"]
-[ext_resource type="PackedScene" uid="uid://drsyryx2pxbdw" path="res://generals/hurt_box.tscn" id="4_p7ots"]
-[ext_resource type="Script" path="res://enemies/slime/states/idle.gd" id="4_tt8r7"]
-[ext_resource type="AudioStream" uid="uid://bhvrten0ter67" path="res://assets/audio/Hit-01.wav" id="5_2d7hq"]
-[ext_resource type="Script" path="res://enemies/slime/states/walk.gd" id="5_fgkca"]
-[ext_resource type="Texture2D" uid="uid://gabjx7mqsen7" path="res://assets/misc/Destroy Smoke.png" id="5_tvd58"]
-[ext_resource type="Script" path="res://enemies/slime/states/stun.gd" id="7_akfhr"]
-[ext_resource type="AudioStream" uid="uid://co42wvlaf00l8" path="res://assets/audio/Hit.wav" id="7_odtls"]
-[ext_resource type="Script" path="res://enemies/slime/states/destroy.gd" id="8_3valp"]
+[ext_resource type="Script" path="res://enemies/goblin/goblin.gd" id="1_2vi8p"]
+[ext_resource type="Texture2D" uid="uid://by4ejqd1ilx1j" path="res://assets/enemies/Goblin.png" id="2_115lm"]
+[ext_resource type="PackedScene" uid="uid://drsyryx2pxbdw" path="res://generals/hurt_box.tscn" id="3_23c2r"]
+[ext_resource type="Texture2D" uid="uid://bj7m245finkuu" path="res://assets/misc/Shadow.png" id="3_b0b7d"]
+[ext_resource type="PackedScene" uid="uid://d1oaj5twphjn6" path="res://generals/hit_box.tscn" id="4_orwl7"]
+[ext_resource type="Texture2D" uid="uid://gabjx7mqsen7" path="res://assets/misc/Destroy Smoke.png" id="6_rljqc"]
+[ext_resource type="AudioStream" uid="uid://bhvrten0ter67" path="res://assets/audio/Hit-01.wav" id="7_a0ncb"]
+[ext_resource type="AudioStream" uid="uid://co42wvlaf00l8" path="res://assets/audio/Hit.wav" id="8_gsekk"]
+[ext_resource type="Script" path="res://enemies/goblin/states/idle.gd" id="9_5dad4"]
+[ext_resource type="Script" path="res://enemies/goblin/states/walk.gd" id="10_xvddc"]
+[ext_resource type="Script" path="res://enemies/goblin/states/stun.gd" id="11_5l2x0"]
+[ext_resource type="Script" path="res://enemies/goblin/states/chase.gd" id="12_4iel3"]
+[ext_resource type="Script" path="res://enemies/goblin/states/destroy.gd" id="13_352vj"]
 
-[sub_resource type="Resource" id="Resource_jste0"]
-script = ExtResource("2_mo34c")
-item = ExtResource("3_aypo3")
-probability = 100
-min_amount = 1
-max_amount = 5
-
-[sub_resource type="Resource" id="Resource_r0hfi"]
-script = ExtResource("2_mo34c")
-item = ExtResource("4_ibfys")
-probability = 15
-min_amount = 1
-max_amount = 1
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0r1i"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oqok7"]
 radius = 5.0
 height = 20.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ft1ra"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ribvi"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1kxq"]
 radius = 14.0
 
 [sub_resource type="Animation" id="Animation_axwjl"]
@@ -198,7 +185,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_2d7hq")
+"stream": ExtResource("7_a0ncb")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -213,7 +200,7 @@ tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("7_odtls")
+"stream": ExtResource("8_gsekk")
 }],
 "times": PackedFloat32Array(0.05)
 }
@@ -290,7 +277,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_2d7hq")
+"stream": ExtResource("7_a0ncb")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -305,7 +292,7 @@ tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("7_odtls")
+"stream": ExtResource("8_gsekk")
 }],
 "times": PackedFloat32Array(0.05)
 }
@@ -382,7 +369,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_2d7hq")
+"stream": ExtResource("7_a0ncb")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -397,7 +384,7 @@ tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("7_odtls")
+"stream": ExtResource("8_gsekk")
 }],
 "times": PackedFloat32Array(0.05)
 }
@@ -553,7 +540,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_2d7hq")
+"stream": ExtResource("7_a0ncb")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -609,7 +596,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_2d7hq")
+"stream": ExtResource("7_a0ncb")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -665,7 +652,7 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_2d7hq")
+"stream": ExtResource("7_a0ncb")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -778,45 +765,42 @@ _data = {
 "walk_up": SubResource("Animation_tvhm0")
 }
 
-[node name="Slime" type="CharacterBody2D"]
-collision_layer = 256
-collision_mask = 16
-script = ExtResource("1_sxn5n")
-drops = Array[ExtResource("2_mo34c")]([SubResource("Resource_jste0"), SubResource("Resource_r0hfi")])
+[node name="Goblin" type="CharacterBody2D"]
+script = ExtResource("1_2vi8p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
-shape = SubResource("CapsuleShape2D_n0r1i")
+shape = SubResource("CapsuleShape2D_oqok7")
 
-[node name="HitBox" parent="." instance=ExtResource("3_bcrey")]
+[node name="HitBox" parent="." instance=ExtResource("4_orwl7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_ft1ra")
+shape = SubResource("CircleShape2D_ribvi")
 debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
 
-[node name="HurtBox" parent="." instance=ExtResource("4_p7ots")]
+[node name="HurtBox" parent="." instance=ExtResource("3_23c2r")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_ft1ra")
+shape = SubResource("CircleShape2D_s1kxq")
 debug_color = Color(0.688632, 0.48842, 0.287193, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -20)
-texture = ExtResource("1_hxstn")
-hframes = 16
-vframes = 2
+texture = ExtResource("2_115lm")
+hframes = 8
+vframes = 3
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
-modulate = Color(0.541176, 0.211765, 0, 1)
+modulate = Color(0, 0, 0, 0.588235)
 show_behind_parent = true
-texture = ExtResource("2_natkt")
+texture = ExtResource("3_b0b7d")
 
 [node name="DestroyEfxSprite" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -10)
-texture = ExtResource("5_tvd58")
+texture = ExtResource("6_rljqc")
 hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DestroyEfxSprite"]
@@ -835,22 +819,16 @@ libraries = {
 [node name="LimboHSM" type="LimboHSM" parent="."]
 
 [node name="Idle" type="LimboState" parent="LimboHSM"]
-script = ExtResource("4_tt8r7")
+script = ExtResource("9_5dad4")
 
 [node name="Walk" type="LimboState" parent="LimboHSM"]
-script = ExtResource("5_fgkca")
+script = ExtResource("10_xvddc")
 
 [node name="Stun" type="LimboState" parent="LimboHSM"]
-script = ExtResource("7_akfhr")
+script = ExtResource("11_5l2x0")
+
+[node name="Chase" type="LimboState" parent="LimboHSM"]
+script = ExtResource("12_4iel3")
 
 [node name="Destroy" type="LimboState" parent="LimboHSM"]
-script = ExtResource("8_3valp")
-
-[connection signal="enemy_damaged" from="." to="LimboHSM/Stun" method="_on_slime_enemy_damaged"]
-[connection signal="enemy_damaged" from="." to="LimboHSM/Destroy" method="_on_slime_enemy_damaged"]
-[connection signal="enemy_destroyed" from="." to="LimboHSM/Destroy" method="_on_slime_enemy_destroyed"]
-[connection signal="damaged" from="HitBox" to="." method="_on_hit_box_damaged"]
-[connection signal="damaged" from="HitBox" to="LimboHSM/Idle" method="_on_hit_box_damaged"]
-[connection signal="damaged" from="HitBox" to="LimboHSM/Walk" method="_on_hit_box_damaged"]
-[connection signal="animation_finished" from="AnimationPlayer" to="LimboHSM/Stun" method="_on_animation_player_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer" to="LimboHSM/Destroy" method="_on_animation_player_animation_finished"]
+script = ExtResource("13_352vj")

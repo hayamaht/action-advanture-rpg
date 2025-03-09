@@ -1,7 +1,7 @@
 extends Node
 
 const PLAYER = preload("res://player/player.tscn")
-#const INVENTORY_DATA: InventoryData = preload("res://resources/player_inventory.tres")
+const INVENTORY_DATA: InventoryData = preload("res://player/player_inventory.tres")
 
 var player: Player
 var player_spawned := false
@@ -30,7 +30,6 @@ func set_as_parent(node: Node2D):
 	if player.get_parent():
 		player.get_parent().remove_child(player)
 	node.add_child(player)
-
 
 func unparent_player(node: Node2D):
 	node.remove_child(player)

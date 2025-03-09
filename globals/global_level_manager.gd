@@ -18,8 +18,8 @@ func change_tilemap_bounds(bounds: Array[Vector2]):
 
 func load_new_level(
 	level_path: String,
-	transition: String,
-	offset: Vector2
+	transition: String = "",
+	offset: Vector2 = Vector2.ZERO
 ) -> void:
 	get_tree().paused = true
 	target_transition = transition

@@ -7,11 +7,13 @@
 extends CanvasLayer
 
 @onready var h_flow_container: HFlowContainer = $Control/HFlowContainer
+@onready var version: Label = $Control/Version
 
 var hearts: Array[HeartGUI] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	version.text = "ver " + GameTitle.VERSION
 	for child in h_flow_container.get_children():
 		if child is HeartGUI:
 			hearts.append(child)

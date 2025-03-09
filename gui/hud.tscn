@@ -90,3 +90,16 @@ layout_mode = 2
 
 [node name="Heart3" parent="Control/HFlowContainer" instance=ExtResource("3_aeby8")]
 layout_mode = 2
+
+[node name="Version" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.86, 0.848677, 0.1806, 1)
+theme_override_font_sizes/font_size = 8
+text = "ver"
+vertical_alignment = 2

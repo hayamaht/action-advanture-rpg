@@ -8,6 +8,7 @@ const SRART_LEVEL = preload("res://levels/level_area01.tscn")
 
 func _ready() -> void:
 	version.text = "ver 0.7.5"
+	button_start.grab_focus()
 
 func _on_button_start_pressed() -> void:
 	get_tree().change_scene_to_packed(SRART_LEVEL)

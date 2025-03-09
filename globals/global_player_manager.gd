@@ -31,7 +31,6 @@ func set_as_parent(node: Node2D):
 		player.get_parent().remove_child(player)
 	node.add_child(player)
 
-
 func unparent_player(node: Node2D):
 	node.remove_child(player)
 

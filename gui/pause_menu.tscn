@@ -64,6 +64,15 @@ text = "[ Pause ]"
 layout_mode = 2
 size_flags_vertical = 8
 
+[node name="Button_Title" type="Button" parent="Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back to Title"
+
+[node name="VSeparator" type="VSeparator" parent="Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
 [node name="Button_Save" type="Button" parent="Control/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -82,7 +91,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -98.0
-offset_top = -27.0
+offset_top = -72.0
 offset_right = 98.0
 offset_bottom = 27.0
 grow_horizontal = 2
@@ -112,3 +121,7 @@ text = "TEXT aas dasd as das dasd asd asd asdd asd asd asd asd asd asd asd "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Button_Title" to="." method="_on_button_title_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Button_Load" to="." method="_on_button_load_pressed"]

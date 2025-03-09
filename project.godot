@@ -97,6 +97,7 @@ pause={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="PlayerHurt"
+2d_physics/layer_3="PlayerInteract"
 2d_physics/layer_5="Walls"
 2d_physics/layer_9="Enemy"
 

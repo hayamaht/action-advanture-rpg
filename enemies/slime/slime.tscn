@@ -19,14 +19,14 @@
 [sub_resource type="Resource" id="Resource_jste0"]
 script = ExtResource("2_mo34c")
 item = ExtResource("3_aypo3")
-probability = 70.0
+probability = 100
 min_amount = 1
-max_amount = 4
+max_amount = 5
 
 [sub_resource type="Resource" id="Resource_r0hfi"]
 script = ExtResource("2_mo34c")
 item = ExtResource("4_ibfys")
-probability = 30.0
+probability = 15
 min_amount = 1
 max_amount = 1
 

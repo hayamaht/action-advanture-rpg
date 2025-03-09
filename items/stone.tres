@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b3gke5aagvh8k"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://b3gke5aagvh8k"]
 
+[ext_resource type="Script" path="res://items/item_effect.gd" id="1_lfk2b"]
 [ext_resource type="Script" path="res://items/item_data.gd" id="1_ojs38"]
 [ext_resource type="Texture2D" uid="uid://bpg4elar8n73s" path="res://assets/items/items.png" id="2_q50cn"]
 
@@ -12,3 +13,4 @@ script = ExtResource("1_ojs38")
 name = "Stone"
 desccriptio = "A stone"
 texture = SubResource("AtlasTexture_8iayd")
+effects = Array[ExtResource("1_lfk2b")]([])

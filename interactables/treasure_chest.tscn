@@ -253,3 +253,6 @@ monitorable = false
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_cfe18")
 debug_color = Color(0.148671, 0.642621, 0.173325, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

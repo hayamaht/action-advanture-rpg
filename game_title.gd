@@ -1,4 +1,7 @@
 extends CanvasLayer
+class_name GameTitle
+
+const VERSION = "0.7.250309"
 
 @onready var button_start: Button = %Button_Start
 @onready var button_2_exit: Button = %Button2_Exit
@@ -8,7 +11,7 @@ const SRART_LEVEL = preload("res://levels/level_area01.tscn")
 var level_path = "res://levels/level_area01.tscn"
 
 func _ready() -> void:
-	version.text = "ver 0.7.5"
+	version.text = "ver " + VERSION
 	button_start.grab_focus()
 
 func _on_button_start_pressed() -> void:

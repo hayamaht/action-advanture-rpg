@@ -1,5 +1,5 @@
-class_name ItemData extends Resource
-
+class_name ItemData
+extends Resource
 
 @export var name := ""
 @export_multiline var desccriptio := ""

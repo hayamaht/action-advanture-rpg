@@ -17,7 +17,7 @@ signal hidden
 @onready var button_title: Button = %Button_Title
 
 @onready var item_desc: Label = $Control/ItemDesc
-#@onready var audio_stream_player: AudioStreamPlayer = $Control/AudioStreamPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $Control/AudioStreamPlayer
 
 
 enum { HIDE, SHOW }
@@ -43,9 +43,8 @@ func toggle_pause_menu(type := HIDE) -> void:
 	else: hidden.emit()
 
 func play_audio(sound: AudioStream) -> void:
-	pass
-	#audio_stream_player.stream = sound
-	#audio_stream_player.play()
+	audio_stream_player.stream = sound
+	audio_stream_player.play()
 
 func _keep_data(type):
 	if type == SAVE:
@@ -57,19 +56,26 @@ func _keep_data(type):
 func update_item_desc(s: String) -> void:
 	item_desc.text = s
 
+
+####
+## Signals
+##
 func _on_button_save_pressed() -> void:
 	if not is_paused: return
 	_keep_data(SAVE)
 	toggle_pause_menu(HIDE)
-
 
 func _on_button_load_pressed() -> void:
 	if not is_paused: return
 	_keep_data(LOAD)
 	await LevelManager.level_load_started
 	toggle_pause_menu(HIDE)
+<<<<<<< HEAD
 
 func _on_button_title_pressed() -> void:
 	PlayerManager.unparent_player(PlayerManager.player.get_parent())
 	toggle_pause_menu(HIDE)
 	get_tree().change_scene_to_packed(GAME_TITLE)
+=======
+####
+>>>>>>> feature/pickup

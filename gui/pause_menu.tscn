@@ -33,6 +33,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -117,7 +119,6 @@ offset_right = 209.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "TEXT aas dasd as das dasd asd asd asdd asd asd asd asd asd asd asd "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

@@ -124,3 +124,5 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Button_Title" to="." method="_on_button_title_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Button_Save" to="." method="_on_button_save_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Button_Load" to="." method="_on_button_load_pressed"]

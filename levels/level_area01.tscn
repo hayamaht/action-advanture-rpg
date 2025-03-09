@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://spq81pi8yx4b"]
+[gd_scene load_steps=8 format=4 uid="uid://spq81pi8yx4b"]
 
 [ext_resource type="PackedScene" uid="uid://b624r1s6cggvb" path="res://tiles/grass.tscn" id="1_jyej4"]
 [ext_resource type="Script" path="res://levels/level.gd" id="1_plaww"]
@@ -6,10 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pqe2qutdxqe6" path="res://player/player_spawn.tscn" id="3_0hriv"]
 [ext_resource type="PackedScene" uid="uid://y8504asyh410" path="res://levels/level_transition.tscn" id="4_re3y1"]
 [ext_resource type="PackedScene" uid="uid://bemdf5tc8d77q" path="res://enemies/slime/slime.tscn" id="6_oivep"]
-[ext_resource type="PackedScene" uid="uid://dluw1s2hgfbey" path="res://items/item_pickup.tscn" id="7_mh5af"]
-[ext_resource type="Resource" uid="uid://dfqafrs53ya67" path="res://items/potion.tres" id="8_usp71"]
-[ext_resource type="Resource" uid="uid://s5mfuc0vxi4u" path="res://items/gem.tres" id="9_a64qy"]
-[ext_resource type="Resource" uid="uid://2hgsor51xq53" path="res://items/apple.tres" id="11_md2jb"]
+[ext_resource type="PackedScene" uid="uid://cb735f6fctf53" path="res://interactables/treasure_chest.tscn" id="7_br72e"]
 
 [node name="LevelArea01" type="Node2D"]
 script = ExtResource("1_plaww")
@@ -75,26 +72,5 @@ position = Vector2(502, 209)
 [node name="Slime4" parent="." instance=ExtResource("6_oivep")]
 position = Vector2(318, 237)
 
-[node name="ItemPickup" parent="." instance=ExtResource("7_mh5af")]
-position = Vector2(634, 33)
-item_data = ExtResource("9_a64qy")
-
-[node name="ItemPickup3" parent="." instance=ExtResource("7_mh5af")]
-position = Vector2(634, 64)
-item_data = ExtResource("9_a64qy")
-
-[node name="ItemPickup4" parent="." instance=ExtResource("7_mh5af")]
-position = Vector2(634, 96)
-item_data = ExtResource("9_a64qy")
-
-[node name="ItemPickup5" parent="." instance=ExtResource("7_mh5af")]
-position = Vector2(634, 264)
-item_data = ExtResource("11_md2jb")
-
-[node name="ItemPickup2" parent="." instance=ExtResource("7_mh5af")]
-position = Vector2(256, 192)
-item_data = ExtResource("8_usp71")
-
-[node name="ItemPickup6" parent="." instance=ExtResource("7_mh5af")]
-position = Vector2(392, 120)
-item_data = ExtResource("11_md2jb")
+[node name="TreasureChest" parent="." instance=ExtResource("7_br72e")]
+position = Vector2(557, 92)

@@ -26,16 +26,16 @@ func update_inventory(i: int = 0) -> void:
 	await get_tree().process_frame
 	get_child(i).grab_focus()
 
-####
-## Signals
-##
+
 func _on_inventory_changed() -> void:
 	var i = focus_index
 	clear_inventory()
 	update_inventory(i)
+
 
 func _on_item_focus() -> void:
 	for i in get_child_count():
 		if get_child(i).has_focus():
 			focus_index = i
 			return
+	pass

@@ -11,7 +11,8 @@ func _ready() -> void:
 	button_start.grab_focus()
 
 func _on_button_start_pressed() -> void:
-	get_tree().change_scene_to_packed(SRART_LEVEL)
+	#get_tree().change_scene_to_packed(SRART_LEVEL)
+	LevelManager.load_new_level("res://levels/level_area01.tscn", "", Vector2.ZERO)
 
 func _on_button_2_exit_pressed() -> void:
 	get_tree().quit()

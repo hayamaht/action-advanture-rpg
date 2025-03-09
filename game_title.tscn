@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfidcgmc2hjon"]
+[gd_scene load_steps=3 format=3 uid="uid://cr134g5j3ksjo"]
 
 [ext_resource type="Texture2D" uid="uid://cf6jwl6b4bgxx" path="res://assets/gui/text_effect_072.jpg" id="1_duvrn"]
 [ext_resource type="Script" path="res://game_title.gd" id="1_io2m7"]

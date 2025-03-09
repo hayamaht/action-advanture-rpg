@@ -2,18 +2,19 @@ extends CharacterBody2D
 class_name Enemy
 
 const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT,  Vector2.UP]
+const PICKUP = preload("res://items/item_pickup.tscn")
 
 signal dir_changed(new_dir: Vector2)
 signal enemy_damaged(hurt_box: HurtBox)
 signal enemy_destroyed(hurt_box: HurtBox)
 
-@export_category("Setting")
+@export_category("Gernal Setting")
 @export var hp := 3
 @export var knockback_speed := 200.0
 @export var desclerate_speed := 10.0
 
 @export_category("Item Drop")
-#@export var drops: Array[DropData]
+@export var drops: Array[DropData]
 
 @onready var hsm: LimboHSM = $LimboHSM
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -56,6 +57,19 @@ func change_dir(dir: Vector2 = Vector2.ZERO) -> bool:
 	sprite_2d.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 
 	return true
+
+func drop_items() -> void:
+	if drops.size() == 0: return
+
+	for i in drops.size():
+		if drops[i] == null or drops[i].item == null: continue
+		var drop_count: int = drops[i].get_drop_count()
+		for j in drop_count:
+			var drop = PICKUP.instantiate() as ItemPickup
+			drop.item_data = drops[i].item
+			get_parent().call_deferred("add_child", drop)
+			drop.global_position = global_position
+			drop.velocity = velocity.rotated(randf_range(-1.5, 1.5)) * randf_range(0.9, 1.5)
 
 
 #func _on_enemy_damaged(hurt_box: HurtBox) -> void:

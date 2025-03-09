@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb735f6fctf53"]
+[gd_scene load_steps=15 format=3 uid="uid://cb735f6fctf53"]
 
 [ext_resource type="Script" path="res://interactables/treasure_chest.gd" id="1_6a070"]
 [ext_resource type="Texture2D" uid="uid://sdq13bisbbjo" path="res://assets/props/Treasure Chest Assets.png" id="2_jsj7e"]
 [ext_resource type="FontFile" uid="uid://hrmtrqwdllkm" path="res://assets/fonts/Dogica Font/TTF/dogicabold.ttf" id="3_o0pay"]
 [ext_resource type="Texture2D" uid="uid://bpg4elar8n73s" path="res://assets/items/items.png" id="3_ua5lf"]
 [ext_resource type="AudioStream" uid="uid://b0r01102o5ht" path="res://assets/audio/Treasure Open Sound.wav" id="5_08jc7"]
+[ext_resource type="PackedScene" uid="uid://cxwj6bmxtnt4g" path="res://generals/persistent_data_handler.tscn" id="6_cwkp4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oteat"]
 atlas = ExtResource("3_ua5lf")
@@ -252,6 +253,8 @@ monitorable = false
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_cfe18")
 debug_color = Color(0.148671, 0.642621, 0.173325, 0.42)
+
+[node name="IsOpen" parent="." instance=ExtResource("6_cwkp4")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

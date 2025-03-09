@@ -9,8 +9,7 @@ extends Node2D
 @onready var label: Label = $ItemSprite/Label
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var interact_area: Area2D = $Area2D
-#@onready var is_open_data: PersistentDataHandler = $IsOpen
-
+@onready var is_open_data: PersistentDataHandler = $IsOpen
 
 var is_open := false
 
@@ -18,7 +17,7 @@ func _ready() -> void:
 	_update_texture()
 	_update_label()
 	if Engine.is_editor_hint(): return
-	#is_open_data.data_loaded.connect(_on_is_open_data_loaded)
+	is_open_data.data_loaded.connect(_on_is_open_data_loaded)
 	_on_is_open_data_loaded()
 
 func _set_item_data(value: ItemData) -> void:
@@ -42,7 +41,7 @@ func _update_label() -> void:
 func _on_interact_pressed() -> void:
 	if is_open == true: return
 	is_open = true
-	#is_open_data.set_value()
+	is_open_data.set_value()
 	animation_player.play("opening")
 	if item_data and quantity >= 1:
 		PlayerManager.INVENTORY_DATA.add_item(item_data, quantity)
@@ -56,7 +55,7 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 	PlayerManager.interact_pressed.disconnect(_on_interact_pressed)
 
 func _on_is_open_data_loaded() -> void:
-	#is_open = is_open_data.value
+	is_open = is_open_data.value
 	if is_open:
 		animation_player.play("opened")
 	else:

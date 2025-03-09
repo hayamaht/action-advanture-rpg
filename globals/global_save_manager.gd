@@ -5,6 +5,8 @@ const SAVE_PATH = "user://"
 signal game_loaded
 signal game_saved
 
+var filename := SAVE_PATH + "data.sav"
+
 var current_save: Dictionary = {
 	scene_path = "",
 	player = {
@@ -18,25 +20,26 @@ var current_save: Dictionary = {
 	quests = [],
 }
 
+func has_saving_file() -> bool:
+	return FileAccess.file_exists(filename)
+
 func save_game() -> void:
 	_update_player_data()
 	_update_scene_path()
-	#_update_item_data()
-	var filename := SAVE_PATH + "data.sav"
+	_update_item_data()
 	var file := FileAccess.open(filename, FileAccess.WRITE)
 	var svae_json = JSON.stringify(current_save)
 	file.store_line(svae_json)
 	game_saved.emit()
 
 func load_game() -> void:
-	var filename := SAVE_PATH + "data.sav"
 	var file := FileAccess.open(filename, FileAccess.READ)
 	var json := JSON.new()
 	json.parse(file.get_line())
 	var dict := json.get_data() as Dictionary
 	current_save = dict
 
-	LevelManager.load_new_level(current_save.scene_path, "", Vector2.ZERO)
+	LevelManager.load_new_level(current_save.scene_path)
 
 	await LevelManager.level_load_started
 
@@ -48,7 +51,7 @@ func load_game() -> void:
 		current_save.player.hp,
 		current_save.player.max_hp
 	)
-	#PlayerManager.INVENTORY_DATA.parse_save_data(current_save.items)
+	PlayerManager.INVENTORY_DATA.parse_save_data(current_save.items)
 
 	await LevelManager.level_loaded
 

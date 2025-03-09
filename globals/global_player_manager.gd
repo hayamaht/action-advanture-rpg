@@ -6,7 +6,7 @@ const INVENTORY_DATA: InventoryData = preload("res://player/player_inventory.tre
 var player: Player
 var player_spawned := false
 
-signal interact_pressed
+#signal interact_pressed
 
 func _ready():
 	add_player_instance()

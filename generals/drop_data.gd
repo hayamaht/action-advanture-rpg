@@ -8,5 +8,4 @@ extends Resource
 
 func get_drop_count() -> int:
 	if randf_range(0, 100) >= probability: return 0
-	var count = randi_range(min_amount, max_amount)
-	return count
+	return randi_range(min_amount, max_amount)

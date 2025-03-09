@@ -1,9 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://bemdf5tc8d77q"]
+[gd_scene load_steps=37 format=3 uid="uid://bemdf5tc8d77q"]
 
 [ext_resource type="Texture2D" uid="uid://b3cyil7oiklno" path="res://assets/enemies/Slime.png" id="1_hxstn"]
 [ext_resource type="Script" path="res://enemies/slime/slime.gd" id="1_sxn5n"]
+[ext_resource type="Script" path="res://generals/drop_data.gd" id="2_mo34c"]
 [ext_resource type="Texture2D" uid="uid://bj7m245finkuu" path="res://assets/misc/Shadow.png" id="2_natkt"]
+[ext_resource type="Resource" uid="uid://s5mfuc0vxi4u" path="res://items/gem.tres" id="3_aypo3"]
 [ext_resource type="PackedScene" uid="uid://d1oaj5twphjn6" path="res://generals/hit_box.tscn" id="3_bcrey"]
+[ext_resource type="Resource" uid="uid://dfqafrs53ya67" path="res://items/potion.tres" id="4_ibfys"]
 [ext_resource type="PackedScene" uid="uid://drsyryx2pxbdw" path="res://generals/hurt_box.tscn" id="4_p7ots"]
 [ext_resource type="Script" path="res://enemies/slime/states/idle.gd" id="4_tt8r7"]
 [ext_resource type="AudioStream" uid="uid://bhvrten0ter67" path="res://assets/audio/Hit-01.wav" id="5_2d7hq"]
@@ -12,6 +15,20 @@
 [ext_resource type="Script" path="res://enemies/slime/states/stun.gd" id="7_akfhr"]
 [ext_resource type="AudioStream" uid="uid://co42wvlaf00l8" path="res://assets/audio/Hit.wav" id="7_odtls"]
 [ext_resource type="Script" path="res://enemies/slime/states/destroy.gd" id="8_3valp"]
+
+[sub_resource type="Resource" id="Resource_jste0"]
+script = ExtResource("2_mo34c")
+item = ExtResource("3_aypo3")
+probability = 70.0
+min_amount = 1
+max_amount = 4
+
+[sub_resource type="Resource" id="Resource_r0hfi"]
+script = ExtResource("2_mo34c")
+item = ExtResource("4_ibfys")
+probability = 30.0
+min_amount = 1
+max_amount = 1
 
 [sub_resource type="Animation" id="Animation_axwjl"]
 length = 0.001
@@ -777,6 +794,7 @@ _data = {
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_sxn5n")
+drops = Array[ExtResource("2_mo34c")]([SubResource("Resource_jste0"), SubResource("Resource_r0hfi")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -20)

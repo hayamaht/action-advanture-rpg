@@ -4,6 +4,8 @@
 
 extends CanvasLayer
 
+const GAME_TITLE = preload("res://game_title.tscn")
+
 ####
 ## signal shown / hidden used in `inventory_ui.gd`
 ##
@@ -12,6 +14,8 @@ signal hidden
 
 @onready var button_save: Button = %Button_Save
 @onready var button_load: Button = %Button_Load
+@onready var button_title: Button = %Button_Title
+
 @onready var item_desc: Label = $Control/ItemDesc
 #@onready var audio_stream_player: AudioStreamPlayer = $Control/AudioStreamPlayer
 
@@ -64,3 +68,8 @@ func _on_button_load_pressed() -> void:
 	_keep_data(LOAD)
 	await LevelManager.level_load_started
 	toggle_pause_menu(HIDE)
+
+func _on_button_title_pressed() -> void:
+	PlayerManager.unparent_player(PlayerManager.player.get_parent())
+	toggle_pause_menu(HIDE)
+	get_tree().change_scene_to_packed(GAME_TITLE)

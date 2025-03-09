@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr134g5j3ksjo"]
+[gd_scene load_steps=4 format=3 uid="uid://cr134g5j3ksjo"]
 
 [ext_resource type="Texture2D" uid="uid://cf6jwl6b4bgxx" path="res://assets/gui/text_effect_072.jpg" id="1_duvrn"]
 [ext_resource type="Script" path="res://game_title.gd" id="1_io2m7"]
+[ext_resource type="FontFile" uid="uid://hrmtrqwdllkm" path="res://assets/fonts/Dogica Font/TTF/dogicabold.ttf" id="3_rgbaa"]
 
 [node name="GameTitle" type="CanvasLayer"]
 layer = 3
@@ -32,17 +33,30 @@ theme_override_constants/margin_bottom = 20
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="Version" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Version" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.89725, 0.97, 0.097, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/font = ExtResource("3_rgbaa")
+theme_override_font_sizes/font_size = 8
 text = "ver 0.0.0"
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 0.28, 0.28, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "NOT REAL TITLE"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -63,10 +77,24 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Start"
 
+[node name="Button_Help" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Help"
+
 [node name="Button2_Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Exit"
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Help" to="." method="_on_button_help_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button2_Exit" to="." method="_on_button_2_exit_pressed"]

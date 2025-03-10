@@ -10,6 +10,7 @@ signal enemy_destroyed(hurt_box: HurtBox)
 
 @export_category("Gernal Setting")
 @export var hp := 3
+@export_range(0, 99, 1) var damage := 0
 @export var knockback_speed := 200.0
 @export var desclerate_speed := 10.0
 
@@ -74,12 +75,6 @@ func drop_items() -> void:
 			get_parent().call_deferred("add_child", drop)
 			drop.global_position = global_position
 			drop.velocity = velocity.rotated(randf_range(-1.5, 1.5)) * randf_range(0.9, 1.5)
-
-
-#func _on_enemy_damaged(hurt_box: HurtBox) -> void:
-	#print("on_enemy_damaged: ")
-	#pass # Replace with function body.
-
 
 func _on_hit_box_damaged(hurt_box: HurtBox) -> void:
 

@@ -7,7 +7,7 @@ func _enter() -> void:
 	_dir = _enemy.global_position.direction_to(_damage_position)
 	_enemy.change_dir(_dir)
 	_enemy.velocity = _dir * -_enemy.knockback_speed
-	_enemy.apply_animation(SlimeState.DESTROY)
+	_enemy.apply_animation(EnemyState.DESTROY)
 	_disable_hurt_box()
 	_enemy.drop_items()
 
@@ -20,7 +20,7 @@ func _disable_hurt_box() -> void:
 		hurt_box.monitoring = false
 
 func _on_slime_enemy_destroyed(_hunt_box: HurtBox) -> void:
-	dispatch(SlimeState.TO_DESTROY)
+	dispatch(EnemyState.TO_DESTROY)
 
 
 func _on_slime_enemy_damaged(hunt_box: HurtBox) -> void:

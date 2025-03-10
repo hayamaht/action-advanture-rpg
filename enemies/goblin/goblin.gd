@@ -4,6 +4,8 @@ extends Enemy
 @export_category("Setting")
 @export var walk_speed := 20.0
 @export var chase_speed := 50.0
+@export var duration_min := 0.5
+@export var duration_max := 1.5
 
 @onready var chase_state: LimboState = $LimboHSM/Chase
 
@@ -25,3 +27,6 @@ func _init_state_machine() -> void:
 
 func apply_movement(_delta: float) -> void:
 	velocity = direction * walk_speed
+
+func get_rand_duration() -> float:
+	return randf_range(duration_min, duration_max)

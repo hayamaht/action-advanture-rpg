@@ -8,10 +8,9 @@ func _enter() -> void:
 	_enemy.invulnerable = true
 	_animation_finished = false
 	_dir = _enemy.global_position.direction_to(_damage_pos)
-	#_dir = _enemy.global_position.direction_to(_enemy.player.global_position)
 	_enemy.change_dir(_dir)
 	_enemy.velocity = _dir * -_enemy.knockback_speed
-	_enemy.apply_animation(SlimeState.STUN)
+	_enemy.apply_animation(EnemyState.STUN)
 
 func _exit() -> void:
 	_enemy.invulnerable = false
@@ -20,7 +19,7 @@ func _update(delta: float) -> void:
 	_enemy.velocity -= _enemy.velocity * _enemy.desclerate_speed * delta
 
 	if _animation_finished == true:
-		dispatch(SlimeState.TO_IDLE)
+		dispatch(EnemyState.TO_IDLE)
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	_animation_finished = true

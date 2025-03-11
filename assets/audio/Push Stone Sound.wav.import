@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://befi2bjr1bkxh"
+path="res://.godot/imported/Push Stone Sound.wav-e79ae4e3c91030507afc1d02c8aca182.sample"
+
+[deps]
+
+source_file="res://assets/audio/Push Stone Sound.wav"
+dest_files=["res://.godot/imported/Push Stone Sound.wav-e79ae4e3c91030507afc1d02c8aca182.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

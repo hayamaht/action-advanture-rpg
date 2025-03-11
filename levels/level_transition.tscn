@@ -9,6 +9,7 @@ size = Vector2(32, 64)
 [node name="LevelTransition" type="Area2D"]
 monitorable = false
 script = ExtResource("1_b6yi7")
+center_player = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-16, 0)

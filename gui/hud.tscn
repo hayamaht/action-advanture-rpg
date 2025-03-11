@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://esl1vjyt5ks4"]
+[gd_scene load_steps=5 format=3 uid="uid://esl1vjyt5ks4"]
 
-[ext_resource type="Script" path="res://gui/hud.gd" id="1_dv7hx"]
+[ext_resource type="Script" uid="uid://bjyqya0fe660m" path="res://gui/hud.gd" id="1_dv7hx"]
 [ext_resource type="Texture2D" uid="uid://bkjs23iub2ggg" path="res://assets/gui/gui-health.png" id="2_litay"]
 [ext_resource type="PackedScene" uid="uid://rjs6tpk4vaxi" path="res://gui/heart.tscn" id="3_aeby8"]
+[ext_resource type="FontFile" uid="uid://hrmtrqwdllkm" path="res://assets/fonts/Dogica Font/TTF/dogicabold.ttf" id="4_h1kph"]
 
 [node name="Hud" type="CanvasLayer"]
 layer = 2
@@ -100,6 +101,7 @@ offset_top = -23.0
 offset_right = 40.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.86, 0.848677, 0.1806, 1)
+theme_override_fonts/font = ExtResource("4_h1kph")
 theme_override_font_sizes/font_size = 8
 text = "ver"
 vertical_alignment = 2

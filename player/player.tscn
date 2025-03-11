@@ -1,18 +1,20 @@
-[gd_scene load_steps=39 format=3 uid="uid://b3t8k3qftlbn5"]
+[gd_scene load_steps=43 format=3 uid="uid://b3t8k3qftlbn5"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_kit0r"]
+[ext_resource type="Script" uid="uid://c8kkrwj0ryp1a" path="res://player/player.gd" id="1_kit0r"]
 [ext_resource type="Texture2D" uid="uid://dnrmkl2pwtfw7" path="res://assets/player/2D Action Adventure Player Sprite.png" id="1_q040f"]
 [ext_resource type="Texture2D" uid="uid://cdye0gveq78xj" path="res://assets/weapons/sword_fx.png" id="3_252o2"]
-[ext_resource type="Script" path="res://player/states/idle.gd" id="3_obswn"]
-[ext_resource type="Script" path="res://player/states/walk.gd" id="4_iwpvq"]
+[ext_resource type="Script" uid="uid://d4fll22tpe42u" path="res://player/states/idle.gd" id="3_obswn"]
+[ext_resource type="Script" uid="uid://cwiudawhj27ot" path="res://player/states/walk.gd" id="4_iwpvq"]
 [ext_resource type="Texture2D" uid="uid://bj7m245finkuu" path="res://assets/misc/Shadow.png" id="4_qsv3i"]
-[ext_resource type="Script" path="res://player/states/attack.gd" id="5_q670m"]
+[ext_resource type="Script" uid="uid://dilp7ap1ir81o" path="res://player/states/attack.gd" id="5_q670m"]
 [ext_resource type="PackedScene" uid="uid://drsyryx2pxbdw" path="res://generals/hurt_box.tscn" id="5_xqfob"]
-[ext_resource type="Script" path="res://player/player_camera.gd" id="6_3626r"]
+[ext_resource type="Script" uid="uid://cnjvsf3lv85k4" path="res://player/player_camera.gd" id="6_3626r"]
 [ext_resource type="AudioStream" uid="uid://cifctourmkgsy" path="res://assets/audio/Sword Swoosh.wav" id="7_7py5x"]
 [ext_resource type="AudioStream" uid="uid://04h53ismxpl0" path="res://assets/audio/Hit Player Sound.wav" id="7_jpmn6"]
+[ext_resource type="Script" uid="uid://cj2jbitvqyhsw" path="res://player/player_interactions.gd" id="9_hl88o"]
 [ext_resource type="PackedScene" uid="uid://d1oaj5twphjn6" path="res://generals/hit_box.tscn" id="10_omicf"]
-[ext_resource type="Script" path="res://player/states/stun.gd" id="11_5w3a3"]
+[ext_resource type="Script" uid="uid://i2j3poi42evf" path="res://player/push_area.gd" id="10_wodsf"]
+[ext_resource type="Script" uid="uid://dv0fjq1se3r8n" path="res://player/states/stun.gd" id="11_5w3a3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67wv7"]
 
@@ -189,10 +191,10 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w7rj7"]
 _data = {
-"RESET": SubResource("Animation_88tdf"),
-"attack_down": SubResource("Animation_lxaon"),
-"attack_side": SubResource("Animation_ownku"),
-"attack_up": SubResource("Animation_0to5t")
+&"RESET": SubResource("Animation_88tdf"),
+&"attack_down": SubResource("Animation_lxaon"),
+&"attack_side": SubResource("Animation_ownku"),
+&"attack_up": SubResource("Animation_0to5t")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ag06m"]
@@ -506,19 +508,19 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h6a70"]
 _data = {
-"RESET": SubResource("Animation_qb166"),
-"attack_down": SubResource("Animation_nrkbn"),
-"attack_side": SubResource("Animation_484yp"),
-"attack_up": SubResource("Animation_43rjj"),
-"idle_down": SubResource("Animation_ny6nu"),
-"idle_side": SubResource("Animation_rcpug"),
-"idle_up": SubResource("Animation_4gdci"),
-"stun_down": SubResource("Animation_8sx0c"),
-"stun_side": SubResource("Animation_uhkpv"),
-"stun_up": SubResource("Animation_pi1sa"),
-"walk_down": SubResource("Animation_fscnh"),
-"walk_side": SubResource("Animation_lxx1r"),
-"walk_up": SubResource("Animation_00kk8")
+&"RESET": SubResource("Animation_qb166"),
+&"attack_down": SubResource("Animation_nrkbn"),
+&"attack_side": SubResource("Animation_484yp"),
+&"attack_up": SubResource("Animation_43rjj"),
+&"idle_down": SubResource("Animation_ny6nu"),
+&"idle_side": SubResource("Animation_rcpug"),
+&"idle_up": SubResource("Animation_4gdci"),
+&"stun_down": SubResource("Animation_8sx0c"),
+&"stun_side": SubResource("Animation_uhkpv"),
+&"stun_up": SubResource("Animation_pi1sa"),
+&"walk_down": SubResource("Animation_fscnh"),
+&"walk_side": SubResource("Animation_lxx1r"),
+&"walk_up": SubResource("Animation_00kk8")
 }
 
 [sub_resource type="Animation" id="Animation_7h0k4"]
@@ -569,9 +571,14 @@ tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rrbvd"]
 _data = {
-"RESET": SubResource("Animation_7h0k4"),
-"damaged": SubResource("Animation_56l4o")
+&"RESET": SubResource("Animation_7h0k4"),
+&"damaged": SubResource("Animation_56l4o")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uyy4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb6p2"]
+size = Vector2(20, 23)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8xvqc"]
 
@@ -608,7 +615,7 @@ hframes = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D/AttackEfxSprite"]
 libraries = {
-"": SubResource("AnimationLibrary_w7rj7")
+&"": SubResource("AnimationLibrary_w7rj7")
 }
 autoplay = "RESET"
 
@@ -622,12 +629,12 @@ debug_color = Color(0.97, 0.735745, 0.3007, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_h6a70")
+&"": SubResource("AnimationLibrary_h6a70")
 }
 
 [node name="EfxAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rrbvd")
+&"": SubResource("AnimationLibrary_rrbvd")
 }
 autoplay = "RESET"
 
@@ -636,6 +643,29 @@ autoplay = "RESET"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
 
 [node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("9_hl88o")
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+position = Vector2(0, 6)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+shape = SubResource("RectangleShape2D_2uyy4")
+debug_color = Color(0, 0.63, 0.021, 0.419608)
+
+[node name="PushArea" type="Area2D" parent="Interactions"]
+position = Vector2(0, 3)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("10_wodsf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/PushArea"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_kb6p2")
+debug_color = Color(0.873893, 0.195727, 0.563005, 0.419608)
 
 [node name="HitBox" parent="." instance=ExtResource("10_omicf")]
 position = Vector2(0, -10)

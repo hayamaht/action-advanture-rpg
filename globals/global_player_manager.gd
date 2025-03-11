@@ -6,7 +6,7 @@ const INVENTORY_DATA: InventoryData = preload("res://player/player_inventory.tre
 var player: Player
 var player_spawned := false
 
-#signal interact_pressed
+signal interact_pressed
 
 func _ready():
 	add_player_instance()
@@ -23,6 +23,7 @@ func set_health(hp: int, max_hp: int) -> void:
 	player.update_hp(0)
 
 func set_player_position(new_pos: Vector2) -> void:
+	print("PlayerMangge: set_player_position=", new_pos)
 	player.global_position = new_pos
 	player.velocity = Vector2.ZERO
 

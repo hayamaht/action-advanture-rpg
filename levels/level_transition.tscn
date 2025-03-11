@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://y8504asyh410"]
 
-[ext_resource type="Script" path="res://levels/level_transition.gd" id="1_b6yi7"]
+[ext_resource type="Script" uid="uid://ck2ullb2iqko7" path="res://levels/level_transition.gd" id="1_b6yi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60fnk"]
 resource_local_to_scene = true
@@ -9,6 +9,7 @@ size = Vector2(32, 64)
 [node name="LevelTransition" type="Area2D"]
 monitorable = false
 script = ExtResource("1_b6yi7")
+center_player = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-16, 0)

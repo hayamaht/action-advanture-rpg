@@ -13,7 +13,7 @@ func _enter() -> void:
 func _exit() -> void:
 	_attacking = false
 	_player.apply_hurt_box(false)
-	#set_deferred(player.hurt_box.monitoring, false)
+	#set_deferred(_player.hurt_box.monitoring, false)
 
 func _update(delta: float) -> void:
 	_player.apply_decelerate(delta)

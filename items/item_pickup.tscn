@@ -1,15 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dluw1s2hgfbey"]
+[gd_scene load_steps=8 format=3 uid="uid://dluw1s2hgfbey"]
 
-[ext_resource type="Script" path="res://items/item_pickup.gd" id="1_4oaoo"]
+[ext_resource type="Script" uid="uid://do1b60y2qipfq" path="res://items/item_pickup.gd" id="1_4oaoo"]
 [ext_resource type="AudioStream" uid="uid://ba1j0nqnot8qo" path="res://assets/audio/PickupSound.wav" id="2_7eme7"]
 [ext_resource type="Texture2D" uid="uid://bj7m245finkuu" path="res://assets/misc/Shadow.png" id="2_jbrg7"]
-[ext_resource type="Texture2D" uid="uid://bpg4elar8n73s" path="res://assets/items/items.png" id="3_box42"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5j3c"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_201qj"]
-atlas = ExtResource("3_box42")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_l6ilt"]
 resource_name = "Default"
@@ -44,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tatn8"]
 _data = {
-"Default": SubResource("Animation_l6ilt"),
-"RESET": SubResource("Animation_mvwp2")
+&"Default": SubResource("Animation_l6ilt"),
+&"RESET": SubResource("Animation_mvwp2")
 }
 
 [node name="ItemPickup" type="CharacterBody2D"]
@@ -69,7 +64,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_jbrg7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_201qj")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_7eme7")

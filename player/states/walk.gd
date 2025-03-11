@@ -16,3 +16,6 @@ func _update(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		dispatch(PlayerState.TO_ATTACK)
+
+	if event.is_action_pressed("interact"):
+		PlayerManager.interact_pressed.emit()

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://d2r5af835qs3g"]
+[gd_resource type="TileSet" load_steps=18 format=3 uid="uid://b3w438lg822bo"]
 
 [ext_resource type="Texture2D" uid="uid://y202w22sy3q3" path="res://assets/props/Dungeon Props.png" id="2_xkcwm"]
 [ext_resource type="Texture2D" uid="uid://6aacnte6uyst" path="res://assets/tiles/dungeon_walls.png" id="3_o8nme"]
@@ -11,6 +11,12 @@ tile_data = PackedInt32Array(0, 851970, 0, 65536, 851970, 1, 131072, 851970, 2, 
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_o8nme"]
 tile_data = PackedInt32Array(0, 786433, 0, 65536, 786433, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_yvaxa"]
+tile_data = PackedInt32Array(0, 2, 5, 65536, 2, 6, 131072, 2, 7, 1, 196610, 5, 65537, 196610, 6, 131073, 196610, 7)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_1hf2v"]
+tile_data = PackedInt32Array(131072, 262146, 7, 1, 458754, 5, 65537, 458754, 6, 131073, 458754, 7)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ah3yk"]
 tile_data = PackedInt32Array(0, 589826, 4, 65536, 589826, 5, 131072, 589826, 6, 1, 655362, 4, 65537, 655362, 5, 131073, 655362, 6, 2, 720898, 4, 65538, 720898, 5, 131074, 720898, 6)
@@ -231,7 +237,9 @@ texture_region_size = Vector2i(32, 32)
 0:5/0 = 0
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -6.39651, -16, -6.92225, 16, -16, 16)
 2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 6.39651, -16, 6.92225, 16, 16, 16)
 3:5/0 = 0
 3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:5/0 = 0
@@ -301,7 +309,9 @@ texture_region_size = Vector2i(32, 32)
 4:7/0 = 0
 4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -6.39651, -16, -6.92225, 16, -16, 16)
 6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 6.39651, -16, 6.92225, 16, 16, 16)
 7:7/0 = 0
 7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 8:7/0 = 0
@@ -338,3 +348,5 @@ pattern_7 = SubResource("TileMapPattern_2lvgf")
 pattern_8 = SubResource("TileMapPattern_3hp7s")
 pattern_9 = SubResource("TileMapPattern_atf4k")
 pattern_10 = SubResource("TileMapPattern_o8nme")
+pattern_11 = SubResource("TileMapPattern_yvaxa")
+pattern_12 = SubResource("TileMapPattern_1hf2v")

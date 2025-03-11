@@ -28,7 +28,7 @@ tile_data = PackedInt32Array(0, 851970, 4, 65536, 851970, 5, 131072, 851970, 6, 
 tile_data = PackedInt32Array(0, 589826, 3, 1, 655362, 3, 2, 720898, 3)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xp86x"]
-tile_data = PackedInt32Array(0, 786434, 0, 65536, 786434, 1, 131072, 786434, 2)
+tile_data = PackedInt32Array(65536, 786434, 1, 131072, 786434, 2)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_nnf33"]
 tile_data = PackedInt32Array(0, 851970, 3, 1, 917506, 3, 2, 983042, 3)

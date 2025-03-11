@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://ds5wq3754axta"]
+[gd_scene load_steps=8 format=4 uid="uid://ds5wq3754axta"]
 
 [ext_resource type="PackedScene" uid="uid://dq5xqqkdib2u3" path="res://tiles/dungeon_lv_1.tscn" id="1_pb3xm"]
 [ext_resource type="Script" uid="uid://bldqdfnmf4ygr" path="res://levels/level.gd" id="1_rvswa"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pqe2qutdxqe6" path="res://player/player_spawn.tscn" id="3_rvswa"]
 [ext_resource type="PackedScene" uid="uid://y8504asyh410" path="res://levels/level_transition.tscn" id="5_bv23q"]
 [ext_resource type="PackedScene" uid="uid://ohbksl2ip8ph" path="res://props/pressure_plate.tscn" id="6_hh2u2"]
+[ext_resource type="PackedScene" uid="uid://cdtrtjtadcdlu" path="res://props/barred_door.tscn" id="7_gu6d1"]
 
 [node name="LevelDungeonArea01" type="Node2D"]
 script = ExtResource("1_rvswa")
@@ -36,6 +37,12 @@ center_player = true
 side = 3
 
 [node name="PressurePlate" parent="." instance=ExtResource("6_hh2u2")]
-position = Vector2(144, 192)
+position = Vector2(192, 144)
+
+[node name="BarredDoor" parent="." instance=ExtResource("7_gu6d1")]
+position = Vector2(257, 86)
+
+[connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]
+[connection signal="deactivated" from="PressurePlate" to="BarredDoor" method="close_door"]
 
 [editable path="DungeonLV1"]

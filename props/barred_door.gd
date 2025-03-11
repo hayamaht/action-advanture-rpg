@@ -9,9 +9,7 @@ func _ready() -> void:
 	pass
 
 func open_door() -> void:
-	animation_player.play("Open_Door")
-	pass
+	animation_player.play("open_door")
 
 func close_door() -> void:
-	animation_player.play("Close_Door")
-	pass
+	animation_player.play("close_door")

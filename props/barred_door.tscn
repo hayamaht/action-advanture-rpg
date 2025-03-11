@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdtrtjtadcdlu"]
+[gd_scene load_steps=11 format=3 uid="uid://cdtrtjtadcdlu"]
 
 [ext_resource type="Script" uid="uid://wymsgy03lc18" path="res://props/barred_door.gd" id="1_hycbt"]
 [ext_resource type="Texture2D" uid="uid://y202w22sy3q3" path="res://assets/props/Dungeon Props.png" id="2_i877i"]
+[ext_resource type="AudioStream" uid="uid://u3oxaik3s74t" path="res://assets/audio/Bars Open Sound.wav" id="3_tgjw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7fae"]
 size = Vector2(64, 64)
@@ -32,9 +33,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
-
-[sub_resource type="Resource" id="Resource_tgjw5"]
-metadata/__load_path__ = "res://__assets__/audio/bars_open.wav"
 
 [sub_resource type="Animation" id="Animation_apu81"]
 resource_name = "close_door"
@@ -73,7 +71,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": SubResource("Resource_tgjw5")
+"stream": ExtResource("3_tgjw5")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -133,9 +131,6 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Resource" id="Resource_im3m1"]
-metadata/__load_path__ = "res://__assets__/audio/bars_open.wav"
-
 [sub_resource type="Animation" id="Animation_774ni"]
 resource_name = "open_door"
 step = 0.07
@@ -173,7 +168,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": SubResource("Resource_im3m1")
+"stream": ExtResource("3_tgjw5")
 }],
 "times": PackedFloat32Array(0)
 }

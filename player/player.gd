@@ -138,7 +138,6 @@ func _on_hit_box_damaged(_hurt_box: HurtBox) -> void:
 	update_hp(-_hurt_box.damage)
 
 	if hp > 0:
-		print("player hp= ", hp)
 		player_damaged.emit(hurt_box)
 	else:
 		print("// game over!!!")

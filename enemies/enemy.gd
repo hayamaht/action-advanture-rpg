@@ -88,11 +88,9 @@ func drop_items() -> void:
 			drop.velocity = velocity.rotated(randf_range(-1.5, 1.5)) * randf_range(0.9, 1.5)
 
 func _on_hit_box_damaged(hurt_box: HurtBox) -> void:
-
 	if invulnerable: return
 
 	hp -= hurt_box.damage
-	print("enemy hp=", hp)
 
 	if hp > 0:
 		enemy_damaged.emit(hurt_box)

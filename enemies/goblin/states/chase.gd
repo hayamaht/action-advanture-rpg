@@ -40,5 +40,5 @@ func _on_player_exited() -> void:
 	_can_see_player = false
 	dispatch(TO_WALK)
 
-func _on_hit_box_damaged(hurt_box: HurtBox) -> void:
+func _on_hit_box_damaged(_hurt_box: HurtBox) -> void:
 	dispatch(TO_STUN)

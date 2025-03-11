@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr134g5j3ksjo"]
+[gd_scene load_steps=3 format=3 uid="uid://cr134g5j3ksjo"]
 
-[ext_resource type="Texture2D" uid="uid://cf6jwl6b4bgxx" path="res://assets/gui/text_effect_072.jpg" id="1_duvrn"]
 [ext_resource type="Script" uid="uid://chbndhl335afb" path="res://game_title.gd" id="1_io2m7"]
 [ext_resource type="FontFile" uid="uid://hrmtrqwdllkm" path="res://assets/fonts/Dogica Font/TTF/dogicabold.ttf" id="3_rgbaa"]
 
@@ -8,15 +7,13 @@
 layer = 3
 script = ExtResource("1_io2m7")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_duvrn")
-expand_mode = 4
-stretch_mode = 5
+color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

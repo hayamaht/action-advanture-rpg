@@ -25,5 +25,5 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 func _on_goblin_enemy_damaged(hurt_box: HurtBox) -> void:
 	_damage_pos = hurt_box.global_position
 
-func _on_goblin_enemy_destroyed(hurt_box: HurtBox) -> void:
+func _on_goblin_enemy_destroyed(_hurt_box: HurtBox) -> void:
 	dispatch(TO_DESTROY)

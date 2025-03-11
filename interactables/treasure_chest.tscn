@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cb735f6fctf53"]
 
-[ext_resource type="Script" path="res://interactables/treasure_chest.gd" id="1_6a070"]
+[ext_resource type="Script" uid="uid://byou3wcwu47tv" path="res://interactables/treasure_chest.gd" id="1_6a070"]
 [ext_resource type="Texture2D" uid="uid://sdq13bisbbjo" path="res://assets/props/Treasure Chest Assets.png" id="2_jsj7e"]
 [ext_resource type="FontFile" uid="uid://hrmtrqwdllkm" path="res://assets/fonts/Dogica Font/TTF/dogicabold.ttf" id="3_o0pay"]
 [ext_resource type="Texture2D" uid="uid://bpg4elar8n73s" path="res://assets/items/items.png" id="3_ua5lf"]
@@ -186,10 +186,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1lfvj"]
 _data = {
-"RESET": SubResource("Animation_iqu5u"),
-"closed": SubResource("Animation_vvni5"),
-"opened": SubResource("Animation_gqhsl"),
-"opening": SubResource("Animation_0unri")
+&"RESET": SubResource("Animation_iqu5u"),
+&"closed": SubResource("Animation_vvni5"),
+&"opened": SubResource("Animation_gqhsl"),
+&"opening": SubResource("Animation_0unri")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa2wv"]

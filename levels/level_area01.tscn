@@ -47,7 +47,7 @@ position = Vector2(318, 314)
 position = Vector2(205, 312)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_0hriv")]
-position = Vector2(641, 193)
+position = Vector2(638, 205)
 
 [node name="TA-01-02" parent="." instance=ExtResource("4_re3y1")]
 position = Vector2(320, 480)
@@ -78,5 +78,26 @@ item_data = ExtResource("8_usp71")
 [node name="Slime" parent="." instance=ExtResource("6_oivep")]
 position = Vector2(564, 172)
 
+[node name="Slime2" parent="." instance=ExtResource("6_oivep")]
+position = Vector2(494, 136)
+
+[node name="Slime3" parent="." instance=ExtResource("6_oivep")]
+position = Vector2(433, 138)
+
 [node name="Goblin" parent="." instance=ExtResource("11_ghlw1")]
 position = Vector2(385, 220)
+
+[node name="Goblin2" parent="." instance=ExtResource("11_ghlw1")]
+position = Vector2(192, 120)
+
+[node name="Goblin3" parent="." instance=ExtResource("11_ghlw1")]
+position = Vector2(318, 118)
+
+[node name="Goblin4" parent="." instance=ExtResource("11_ghlw1")]
+position = Vector2(638, 288)
+
+[node name="Goblin5" parent="." instance=ExtResource("11_ghlw1")]
+position = Vector2(670, 45)
+
+[node name="Goblin6" parent="." instance=ExtResource("11_ghlw1")]
+position = Vector2(504, 50)

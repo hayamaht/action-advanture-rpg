@@ -19,10 +19,14 @@ func _ready() -> void:
 func _init_state_machine() -> void:
 	hsm.add_transition(idle_state, move_state, EnemyState.TO_WALK)
 	hsm.add_transition(move_state, idle_state, EnemyState.TO_IDLE)
+	hsm.add_transition(chase_state, idle_state, EnemyState.TO_IDLE)
 	hsm.add_transition(idle_state, stun_state, EnemyState.TO_STUN)
 	hsm.add_transition(move_state, stun_state, EnemyState.TO_STUN)
 	hsm.add_transition(chase_state, stun_state, EnemyState.TO_STUN)
-	hsm.add_transition(stun_state, chase_state, EnemyState.TO_CHASE)
+	#hsm.add_transition(idle_state, chase_state, EnemyState.TO_CHASE)
+	#hsm.add_transition(move_state, chase_state, EnemyState.TO_CHASE)
+	#hsm.add_transition(stun_state, chase_state, EnemyState.TO_CHASE)
+	hsm.add_transition(hsm.ANYSTATE, chase_state, EnemyState.TO_CHASE)
 	hsm.add_transition(hsm.ANYSTATE, destroy_state, EnemyState.TO_DESTROY)
 
 	hsm.initial_state = idle_state
@@ -31,6 +35,3 @@ func _init_state_machine() -> void:
 
 func apply_movement(_delta: float) -> void:
 	velocity = direction * walk_speed
-
-func get_rand_duration() -> float:
-	return randf_range(duration_min, duration_max)

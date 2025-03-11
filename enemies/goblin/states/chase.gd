@@ -23,7 +23,7 @@ func _update(delta: float) -> void:
 	_dir = lerp(_dir, new_dir, _enemy.ture_rate)
 	_enemy.change_dir(_dir)
 	_enemy.velocity = _dir * _enemy.chase_speed
-	#_enemy.apply_animation(CHASE)
+	_enemy.apply_animation(CHASE)
 
 	if _can_see_player == false:
 		_time -= delta

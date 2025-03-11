@@ -68,7 +68,7 @@ func change_dir(dir: Vector2 = Vector2.ZERO) -> bool:
 
 	if new_dir == cardinal_direction: return false
 
-	cardinal_direction = dir
+	cardinal_direction = new_dir
 	dir_changed.emit(new_dir)
 	sprite_2d.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 

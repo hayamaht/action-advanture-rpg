@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ds5wq3754axta"]
+[gd_scene load_steps=9 format=4 uid="uid://ds5wq3754axta"]
 
 [ext_resource type="PackedScene" uid="uid://dq5xqqkdib2u3" path="res://tiles/dungeon_lv_1.tscn" id="1_pb3xm"]
 [ext_resource type="Script" uid="uid://bldqdfnmf4ygr" path="res://levels/level.gd" id="1_rvswa"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://y8504asyh410" path="res://levels/level_transition.tscn" id="5_bv23q"]
 [ext_resource type="PackedScene" uid="uid://ohbksl2ip8ph" path="res://props/pressure_plate.tscn" id="6_hh2u2"]
 [ext_resource type="PackedScene" uid="uid://cdtrtjtadcdlu" path="res://props/barred_door.tscn" id="7_gu6d1"]
+[ext_resource type="PackedScene" uid="uid://quvpxtw5ygiy" path="res://props/pushable_statue.tscn" id="8_p8jdr"]
 
 [node name="LevelDungeonArea01" type="Node2D"]
 script = ExtResource("1_rvswa")
@@ -36,11 +37,21 @@ target_transition_area = "TA-01-DA01"
 center_player = true
 side = 3
 
+[node name="TA-01-DA02" parent="." instance=ExtResource("5_bv23q")]
+position = Vector2(288, 80)
+level = "uid://ckpe25p5c3o0b"
+target_transition_area = "TA-01-DA02"
+center_player = true
+side = 2
+
 [node name="PressurePlate" parent="." instance=ExtResource("6_hh2u2")]
 position = Vector2(192, 144)
 
 [node name="BarredDoor" parent="." instance=ExtResource("7_gu6d1")]
 position = Vector2(257, 86)
+
+[node name="PushableStatue" parent="." instance=ExtResource("8_p8jdr")]
+position = Vector2(345, 144)
 
 [connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]
 [connection signal="deactivated" from="PressurePlate" to="BarredDoor" method="close_door"]

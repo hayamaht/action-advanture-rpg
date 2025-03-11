@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name GameTitle
 
-const VERSION = "0.7.250309"
+const VERSION = "0.7.250312"
 
 @onready var button_start: Button = %Button_Start
 @onready var button_2_exit: Button = %Button2_Exit

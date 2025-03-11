@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pqe2qutdxqe6"]
 
-[ext_resource type="Script" path="res://player/player_spawn.gd" id="1_8mkvf"]
+[ext_resource type="Script" uid="uid://c8kcpq582guu4" path="res://player/player_spawn.gd" id="1_8mkvf"]
 [ext_resource type="Texture2D" uid="uid://dnrmkl2pwtfw7" path="res://assets/player/2D Action Adventure Player Sprite.png" id="1_yqr3a"]
 
 [node name="PlayerSpawn" type="Node2D"]

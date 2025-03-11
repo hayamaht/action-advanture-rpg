@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0242r6kws5pk"]
 
-[ext_resource type="Script" path="res://enemies/vision_area.gd" id="1_oq8hj"]
+[ext_resource type="Script" uid="uid://bo2dw4lgb57us" path="res://enemies/vision_area.gd" id="1_oq8hj"]
 
 [node name="VisionArea" type="Area2D"]
 collision_layer = 0

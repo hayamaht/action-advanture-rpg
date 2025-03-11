@@ -3,11 +3,6 @@ class_name Slime
 
 @export_category("Setting")
 @export var wander_speed := 20.0
-@export var duration_min := 0.5
-@export var duration_max := 1.5
-@export var animation_duration := 0.5
-@export var cycle_min := 1
-@export var cycle_max := 3
 
 
 func _ready() -> void:
@@ -27,9 +22,3 @@ func _init_state_machine() -> void:
 
 func apply_movement(_delta: float) -> void:
 	velocity = direction * wander_speed
-
-func get_rand_duration() -> float:
-	return randf_range(duration_min, duration_max)
-
-func get_rand_cycle() -> float:
-	return randf_range(cycle_min, cycle_max) * animation_duration

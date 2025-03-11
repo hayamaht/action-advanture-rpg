@@ -13,6 +13,11 @@ signal enemy_destroyed(hurt_box: HurtBox)
 @export_range(0, 99, 1) var damage := 0
 @export var knockback_speed := 200.0
 @export var desclerate_speed := 10.0
+@export var duration_min := 0.5
+@export var duration_max := 1.5
+@export var animation_duration := 0.5
+@export var cycle_min := 1
+@export var cycle_max := 3
 
 @export_category("Item Drop")
 @export var drops: Array[DropData]
@@ -48,6 +53,12 @@ func apply_dir_name() -> String:
 	if cardinal_direction == Vector2.DOWN: return "down"
 	return "side"
 
+func get_rand_duration() -> float:
+	return randf_range(duration_min, duration_max)
+
+func get_rand_cycle() -> float:
+	return randf_range(cycle_min, cycle_max) * animation_duration
+
 func change_dir(dir: Vector2 = Vector2.ZERO) -> bool:
 	direction = dir
 	if direction == Vector2.ZERO: return false
@@ -81,6 +92,7 @@ func _on_hit_box_damaged(hurt_box: HurtBox) -> void:
 	if invulnerable: return
 
 	hp -= hurt_box.damage
+	print("enemy hp=", hp)
 
 	if hp > 0:
 		enemy_damaged.emit(hurt_box)

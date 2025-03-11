@@ -7,7 +7,7 @@ func _enter() -> void:
 	_dir = _enemy.global_position.direction_to(_damage_position)
 	_enemy.change_dir(_dir)
 	_enemy.velocity = _dir * -_enemy.knockback_speed
-	_enemy.apply_animation(EnemyState.DESTROY)
+	_enemy.apply_animation(DESTROY)
 	_disable_hurt_box()
 	_enemy.drop_items()
 
@@ -22,9 +22,3 @@ func _disable_hurt_box() -> void:
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	if _enemy.hp <= 0:
 		_enemy.queue_free()
-
-func _on_goblin_enemy_damaged(hurt_box: HurtBox) -> void:
-	_damage_position = hurt_box.global_position
-
-func _on_goblin_enemy_destroyed(hurt_box: HurtBox) -> void:
-	dispatch(EnemyState.TO_DESTROY)

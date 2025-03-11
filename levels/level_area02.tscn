@@ -18,5 +18,5 @@ position = Vector2(384, 66)
 position = Vector2(384, 0)
 level = "res://levels/level_area01.tscn"
 target_transition_area = "TA-01-02"
-center_player = null
+center_player = false
 side = 2
